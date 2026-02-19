@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "phytochorion:block/ginkgo_slab"
+    },
+    "type=top": {
+      "model": "phytochorion:block/ginkgo_slab_top"
+    },
+    "type=double": {
+      "model": "phytochorion:block/ginkgo_slab_full"
+    }
+  }
+}

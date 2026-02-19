@@ -1,0 +1,8 @@
+{
+  "parent": "phytochorion:custom/info",
+  "textures": {
+    "all": "phytochorion:block/info",
+    "particle": "phytochorion:block/info",
+    "1": "phytochorion:block/info"
+  }
+}

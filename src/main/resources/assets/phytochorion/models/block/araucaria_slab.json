@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "phytochorion:block/araucaria_planks",
+    "top": "phytochorion:block/araucaria_planks",
+    "side": "phytochorion:block/araucaria_planks"
+  }
+}

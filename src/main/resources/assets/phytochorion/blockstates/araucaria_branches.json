@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "phytochorion:block/araucaria_branches",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "phytochorion:block/araucaria_branches"
+    },
+    "axis=z": {
+      "model": "phytochorion:block/araucaria_branches",
+      "x": 90
+    }
+  }
+}

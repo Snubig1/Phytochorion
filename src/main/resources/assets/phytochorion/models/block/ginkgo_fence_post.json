@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "phytochorion:block/ginkgo_planks",
+    "particle": "phytochorion:block/ginkgo_planks"
+  }
+}

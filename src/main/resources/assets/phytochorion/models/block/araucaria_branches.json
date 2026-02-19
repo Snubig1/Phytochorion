@@ -1,0 +1,11 @@
+{
+  "parent": "phytochorion:custom/araucaria_branches",
+  "textures": {
+    "all": "phytochorion:block/araucaria_branch_side",
+    "particle": "phytochorion:block/araucaria_branch_side",
+    "0": "phytochorion:block/araucaria_branch_reverse",
+    "1": "phytochorion:block/araucaria_branch_top",
+    "2": "phytochorion:block/araucaria_branch_side",
+    "missing": "phytochorion:block/"
+  }
+}

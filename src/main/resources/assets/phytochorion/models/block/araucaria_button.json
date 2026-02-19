@@ -1,0 +1,6 @@
+{
+  "parent": "block/button",
+  "textures": {
+    "texture": "phytochorion:block/araucaria_planks"
+  }
+}

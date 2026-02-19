@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "phytochorion:araucaria_planks"
+    }
+  ],
+  "result": {
+    "item": "phytochorion:araucaria_button",
+    "count": 1
+  }
+}

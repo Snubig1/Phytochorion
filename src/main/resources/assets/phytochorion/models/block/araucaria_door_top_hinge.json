@@ -1,0 +1,8 @@
+{
+  "parent": "block/door_top_right",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "phytochorion:block/araucaria_door_bottom",
+    "top": "phytochorion:block/araucaria_door_top"
+  }
+}

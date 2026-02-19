@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "000",
+    "000"
+  ],
+  "key": {
+    "0": {
+      "item": "fossil:reinforced_glass"
+    }
+  },
+  "result": {
+    "item": "phytochorion:reinforced_glass_panes",
+    "count": 16
+  }
+}

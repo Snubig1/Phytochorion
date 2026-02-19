@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "phytochorion:block/stripped_araucaria_log",
+    "particle": "phytochorion:block/stripped_araucaria_log"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "phytochorion:block/ginkgo_planks",
+    "particle": "phytochorion:block/ginkgo_planks"
+  }
+}

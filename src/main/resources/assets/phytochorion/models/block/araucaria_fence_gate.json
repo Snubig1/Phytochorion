@@ -1,0 +1,6 @@
+{
+  "parent": "block/template_fence_gate",
+  "textures": {
+    "texture": "phytochorion:block/araucaria_planks"
+  }
+}

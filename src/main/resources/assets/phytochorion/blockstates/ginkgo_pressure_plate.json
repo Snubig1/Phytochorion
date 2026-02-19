@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "phytochorion:block/ginkgo_pressure_plate"
+    },
+    "powered=true": {
+      "model": "phytochorion:block/ginkgo_pressure_plate_down"
+    }
+  }
+}

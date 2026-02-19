@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "phytochorion:block/araucaria_log_side",
+    "particle": "phytochorion:block/araucaria_log_side"
+  }
+}

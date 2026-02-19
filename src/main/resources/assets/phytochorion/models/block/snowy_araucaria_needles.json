@@ -1,0 +1,8 @@
+{
+  "parent": "phytochorion:custom/araucaria_needles",
+  "textures": {
+    "all": "phytochorion:block/snowy_araucaria_needles",
+    "particle": "phytochorion:block/snowy_araucaria_needles",
+    "cross": "phytochorion:block/snowy_araucaria_needles"
+  }
+}

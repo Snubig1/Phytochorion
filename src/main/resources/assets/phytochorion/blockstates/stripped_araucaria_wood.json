@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "phytochorion:block/stripped_araucaria_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "phytochorion:block/stripped_araucaria_wood"
+    },
+    "axis=z": {
+      "model": "phytochorion:block/stripped_araucaria_wood",
+      "x": 90
+    }
+  }
+}

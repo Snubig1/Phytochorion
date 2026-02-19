@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "phytochorion:block/stripped_araucaria_log_top",
+    "up": "phytochorion:block/stripped_araucaria_log_top",
+    "north": "phytochorion:block/stripped_araucaria_log",
+    "east": "phytochorion:block/stripped_araucaria_log",
+    "south": "phytochorion:block/stripped_araucaria_log",
+    "west": "phytochorion:block/stripped_araucaria_log",
+    "particle": "phytochorion:block/stripped_araucaria_log_top"
+  }
+}

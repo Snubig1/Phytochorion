@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "phytochorion:block/araucaria_planks",
+    "particle": "phytochorion:block/araucaria_planks"
+  }
+}

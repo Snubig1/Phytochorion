@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "phytochorion:ginkgo_logs"
+    }
+  ],
+  "result": {
+    "item": "phytochorion:ginkgo_planks",
+    "count": 4
+  }
+}

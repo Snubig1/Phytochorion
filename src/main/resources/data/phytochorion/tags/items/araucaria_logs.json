@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "phytochorion:araucaria_log",
+    "phytochorion:stripped_araucaria_log",
+    "phytochorion:araucaria_wood",
+    "phytochorion:stripped_araucaria_wood"
+  ]
+}

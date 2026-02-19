@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "phytochorion:araucaria_leaves",
+    "phytochorion:pine_leaves",
+    "phytochorion:ginkgo_leaves"
+  ]
+}

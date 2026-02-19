@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "phytochorion:block/pine_leaves",
+    "particle": "phytochorion:block/pine_leaves"
+  }
+}
