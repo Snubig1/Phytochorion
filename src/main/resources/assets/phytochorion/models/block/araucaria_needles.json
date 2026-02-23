@@ -2,7 +2,7 @@
   "parent": "phytochorion:custom/araucaria_needles",
   "textures": {
     "all": "phytochorion:block/araucaria_needles_item",
-    "particle": "phytochorion:block/araucaria_needles_item",
+    "particle": "phytochorion:block/araucaria_needles",
     "cross": "phytochorion:block/araucaria_needles"
   }
 }
