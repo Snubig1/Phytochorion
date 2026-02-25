@@ -73,22 +73,22 @@ public class AraucariaTrunkPlacer extends TrunkPlacer {
             if (branchLengths[i] == 1) temp = 10;
 
 
-            tempAtatchmentPoint = PlaceBranch(biConsumer, basePos.above((treeHeight-(2*i))-2), Direction.NORTH,branchLengths[i], random.nextFloat(), 1, random);
+            tempAtatchmentPoint = PlaceBranch(biConsumer, basePos.above((treeHeight-(2*i))-2), Direction.NORTH,branchLengths[i], MapRandomFloat(random.nextFloat(),-0.7f,0.7f), 1, random);
             attachmentPointList.add(new FoliagePlacer.FoliageAttachment(tempAtatchmentPoint.getA(),tempAtatchmentPoint.getB().ordinal() + temp,i==0 || branchLengths[i] > branchLengths[i-1]));
 
-            tempAtatchmentPoint = PlaceBranch(biConsumer, basePos.above((treeHeight-(2*i))-2), Direction.SOUTH,branchLengths[i], random.nextFloat(), 1, random);
+            tempAtatchmentPoint = PlaceBranch(biConsumer, basePos.above((treeHeight-(2*i))-2), Direction.SOUTH,branchLengths[i], MapRandomFloat(random.nextFloat(),-0.7f,0.7f), 1, random);
             attachmentPointList.add(new FoliagePlacer.FoliageAttachment(tempAtatchmentPoint.getA(),tempAtatchmentPoint.getB().ordinal() + temp,i==0 || branchLengths[i] > branchLengths[i-1]));
 
-            tempAtatchmentPoint = PlaceBranch(biConsumer, basePos.above((treeHeight-(2*i))-2), Direction.WEST,branchLengths[i], random.nextFloat(), 1, random);
+            tempAtatchmentPoint = PlaceBranch(biConsumer, basePos.above((treeHeight-(2*i))-2), Direction.WEST,branchLengths[i], MapRandomFloat(random.nextFloat(),-0.7f,0.7f), 1, random);
             attachmentPointList.add(new FoliagePlacer.FoliageAttachment(tempAtatchmentPoint.getA(),tempAtatchmentPoint.getB().ordinal() + temp,i==0 || branchLengths[i] > branchLengths[i-1]));
 
-            tempAtatchmentPoint = PlaceBranch(biConsumer, basePos.above((treeHeight-(2*i))-2), Direction.EAST,branchLengths[i], random.nextFloat(), 1, random);
+            tempAtatchmentPoint = PlaceBranch(biConsumer, basePos.above((treeHeight-(2*i))-2), Direction.EAST,branchLengths[i], MapRandomFloat(random.nextFloat(),-0.7f,0.7f), 1, random);
             attachmentPointList.add(new FoliagePlacer.FoliageAttachment(tempAtatchmentPoint.getA(),tempAtatchmentPoint.getB().ordinal() + temp,i==0 || branchLengths[i] > branchLengths[i-1]));
         }
         if (random.nextBoolean()) attachmentPointList.add(new FoliagePlacer.FoliageAttachment(basePos.above((treeHeight-(2*branchAmount))-2),Direction.DOWN.ordinal(),false));
 
         if (random.nextInt(0,3) == 0 && (treeHeight - ((branchAmount*2)+4) > 5)) {
-            tempAtatchmentPoint = PlaceBranch(biConsumer, basePos.above(random.nextInt(5, (treeHeight - ((branchAmount * 2) + 4)))), Direction.Plane.HORIZONTAL.getRandomDirection(random), random.nextInt(1, 3), Math.signum(random.nextFloat()), 0, random);
+            tempAtatchmentPoint = PlaceBranch(biConsumer, basePos.above(random.nextInt(5, (treeHeight - ((branchAmount * 2) + 4)))), Direction.Plane.HORIZONTAL.getRandomDirection(random), random.nextInt(1, 3), Math.signum(random.nextFloat()-0.5f), 0, random);
             attachmentPointList.add(new FoliagePlacer.FoliageAttachment(tempAtatchmentPoint.getA().above(), Direction.UP.ordinal(), true));
         }
 
@@ -108,6 +108,10 @@ public class AraucariaTrunkPlacer extends TrunkPlacer {
         }
         return new Tuple<>(position.relative(direction,branchLength+crownExtendedBy).relative(direction.getClockWise(),Math.round(branchLength*directionOffsetH)), direction);
 
+    }
+
+    private float MapRandomFloat(float value, float bound_1, float bound_2){
+        return value * (bound_2 - bound_1) + bound_1;
     }
 
     private void PlaceBlock(BiConsumer<BlockPos,BlockState> biConsumer, BlockPos position, BlockState block) {
