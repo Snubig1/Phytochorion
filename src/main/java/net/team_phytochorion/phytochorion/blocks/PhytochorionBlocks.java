@@ -6,7 +6,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.grower.OakTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -20,6 +19,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.team_phytochorion.phytochorion.Phytochorion;
 import net.team_phytochorion.phytochorion.items.PhytochorionItems;
+import net.team_phytochorion.phytochorion.world.feature.tree.AraucariaTreeGrower;
+import net.team_phytochorion.phytochorion.world.feature.tree.PineTreeGrower;
 
 import java.util.function.Supplier;
 
@@ -38,7 +39,7 @@ public class PhytochorionBlocks {
     public static final RegistryObject<Block> ARAUCARIA_NEEDLES = registerBlock("araucaria_needles", AraucariaNeedlesBlock::new);
     public static final RegistryObject<Block> ARAUCARIA_PRESSURE_PLATE = registerBlock("araucaria_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(ARAUCARIA_PLANKS.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).ignitedByLava().pushReaction(PushReaction.DESTROY), BlockSetType.OAK));
     //change to araucaria tree grower
-    public static final RegistryObject<Block> ARAUCARIA_SAPLING = registerBlock("araucaria_sapling", () -> new SaplingBlock(new OakTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> ARAUCARIA_SAPLING = registerBlock("araucaria_sapling", () -> new SaplingBlock(new AraucariaTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<Block> ARAUCARIA_SLAB = registerBlock("araucaria_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ARAUCARIA_PLANKS.get())));
     public static final RegistryObject<Block> ARAUCARIA_STAIRS = registerBlock("araucaria_stairs", () -> new StairBlock(() -> ARAUCARIA_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(ARAUCARIA_PLANKS.get())));
     //remember to make these obtainable
@@ -62,9 +63,7 @@ public class PhytochorionBlocks {
 
 
 
-    //change to pine tree grower
-    public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling", () -> new SaplingBlock(new OakTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
-    //overwrite vanilla pine grower
+    public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling", () -> new SaplingBlock(new PineTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<Block> PINE_LEAVES = registerBlock("pine_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(PhytochorionBlocks::ocelotOrParrot).isSuffocating(PhytochorionBlocks::never).isViewBlocking(PhytochorionBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(PhytochorionBlocks::never)));
 
 

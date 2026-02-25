@@ -7,18 +7,30 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class AraucariaNeedlesBlock extends FlowerBlock {
+    public static final BooleanProperty SNOWY = BlockStateProperties.SNOWY;
 	public AraucariaNeedlesBlock() {
-		super(MobEffects.LUCK, 200, Properties.of().pushReaction(PushReaction.DESTROY).sound(SoundType.GRASS).instabreak().noCollission());
+		super(() -> MobEffects.LUCK, 200, Properties.of().pushReaction(PushReaction.DESTROY).sound(SoundType.GRASS).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ));
+        this.registerDefaultState(this.stateDefinition.any().setValue(SNOWY, false));
 	}
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+         builder.add(SNOWY);
+    }
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {

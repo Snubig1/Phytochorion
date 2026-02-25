@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "snowy=false": {
       "model": "phytochorion:block/araucaria_needles"
+    },
+    "snowy=true": {
+      "model": "phytochorion:block/snowy_araucaria_needles"
     }
   }
 }
