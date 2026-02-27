@@ -3,6 +3,7 @@
   "textures": {
     "all": "phytochorion:block/araucaria_needles_item",
     "particle": "phytochorion:block/araucaria_needles",
-    "cross": "phytochorion:block/araucaria_needles"
+    "cross": "phytochorion:block/araucaria_needles",
+    "snow": "phytochorion:block/snowy_araucaria_needles"
   }
 }

@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#phytochorion:araucaria_sapling",
-    "#phytochorion:ginkgo_sapling"
+    "phytochorion:araucaria_sapling",
+    "phytochorion:pine_sapling"
   ]
 }

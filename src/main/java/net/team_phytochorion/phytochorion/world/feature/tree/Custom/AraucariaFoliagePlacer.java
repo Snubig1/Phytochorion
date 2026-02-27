@@ -24,22 +24,22 @@ public class AraucariaFoliagePlacer extends FoliagePlacer {
     protected FoliagePlacerType<?> type() {return PhytochorionFoliagePlacers.ARAUCARIA_FOLIAGE_PLACER.get();}
 
     @Override
-    protected void createFoliage(LevelSimulatedReader level, FoliagePlacer.FoliageSetter biConsumer, RandomSource random, TreeConfiguration configuration, int p_161426_, FoliageAttachment attachment, int p_161428_, int p_161429_, int p_161430_) {
+    protected void createFoliage(LevelSimulatedReader level, FoliagePlacer.FoliageSetter foliageSetter, RandomSource random, TreeConfiguration configuration, int p_161426_, FoliageAttachment attachment, int p_161428_, int p_161429_, int p_161430_) {
         Direction direction;
 
-        tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos());
+        tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos());
 
         if (attachment.radiusOffset() == 1)
         {
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().above());
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().north());
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().south());
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().west());
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().east());
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().above().north(2));
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().above().south(2));
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().above().west(2));
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().above().east(2));
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().above());
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().north());
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().south());
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().west());
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().east());
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().above().north(2));
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().above().south(2));
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().above().west(2));
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().above().east(2));
         }
 
         if (attachment.radiusOffset() >= 10) direction = Direction.values()[attachment.radiusOffset()-10];
@@ -47,34 +47,34 @@ public class AraucariaFoliagePlacer extends FoliagePlacer {
 
 
         if (attachment.radiusOffset() != 0 && attachment.radiusOffset() != 1) {
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().relative(direction, 1));
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().relative(direction, -1).relative(direction.getClockWise(), 1));
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().relative(direction, -1).relative(direction.getClockWise(), -1));
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().relative(direction, 1));
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().relative(direction, -1).relative(direction.getClockWise(), 1));
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().relative(direction, -1).relative(direction.getClockWise(), -1));
 
             if (attachment.radiusOffset()< 10){
-                tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().relative(direction.getClockWise(), 1));
-                tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().relative(direction.getClockWise(), -1));
+                tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().relative(direction.getClockWise(), 1));
+                tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().relative(direction.getClockWise(), -1));
             }
             if (attachment.doubleTrunk()){
-                tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().relative(direction, 2).above());
+                tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().relative(direction, 2).above());
 
                 if (attachment.radiusOffset()< 10){
-                    tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().relative(direction, -1).relative(direction.getClockWise(), 2).above());
-                    tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().relative(direction, -1).relative(direction.getClockWise(), -2).above());
-                    tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().relative(direction, 1).relative(direction.getClockWise(), 2).above());
-                    tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().relative(direction, 1).relative(direction.getClockWise(), -2).above());
+                    tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().relative(direction, -1).relative(direction.getClockWise(), 2).above());
+                    tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().relative(direction, -1).relative(direction.getClockWise(), -2).above());
+                    tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().relative(direction, 1).relative(direction.getClockWise(), 2).above());
+                    tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().relative(direction, 1).relative(direction.getClockWise(), -2).above());
                 }
                 else{
-                    tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().relative(direction.getClockWise(), 2).above());
+                    tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().relative(direction.getClockWise(), 2).above());
                 }
             }
         }
 
         if (attachment.radiusOffset() == 0){
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().north());
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().south());
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().west());
-            tryPlaceLeaf(level, biConsumer, random, configuration, attachment.pos().east());
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().north());
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().south());
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().west());
+            tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().east());
         }
     }
 
