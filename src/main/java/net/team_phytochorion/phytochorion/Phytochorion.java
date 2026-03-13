@@ -15,9 +15,11 @@ import net.team_phytochorion.phytochorion.items.PhytochorionItems;
 import net.team_phytochorion.phytochorion.misc.PhytochorionCreativeModeTabs;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionFoliagePlacers;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
+import net.team_phytochorion.phytochorion.world.levelgen.PhytochorionSurfaceRuleData;
 import org.slf4j.Logger;
 
 import net.team_phytochorion.phytochorion.blocks.PhytochorionBlocks;
+import terrablender.api.SurfaceRuleManager;
 
 
 @Mod(Phytochorion.MOD_ID)
@@ -45,7 +47,12 @@ public class Phytochorion
     //game starts
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        
+        event.enqueueWork(() ->
+        {
+
+            // Register our surface rules
+            SurfaceRuleManager.addToDefaultSurfaceRulesAtStage(SurfaceRuleManager.RuleCategory.OVERWORLD, SurfaceRuleManager.RuleStage.AFTER_BEDROCK,10, PhytochorionSurfaceRuleData.makeRules());
+        });
     }
 
     //world starts
