@@ -13,11 +13,7 @@ public class PhytochorionSurfaceRuleData {
 
     public static SurfaceRules.RuleSource makeRules()
     {
-        SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
-        //SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
-
         return SurfaceRules.sequence(
-
                 SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.isBiome(PhytochorionBiomes.ARAUCARIA_FOREST) ,SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(60),0),SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(1,1), SurfaceRules.sequence(
                         SurfaceRules.ifTrue(SurfaceRules.noiseCondition(PhytochorionNoises.ARAUCARIA_SURFACE,0.20),COARSE_DIRT),
                         SurfaceRules.ifTrue(SurfaceRules.noiseCondition(PhytochorionNoises.ARAUCARIA_SURFACE,-0.30),PODZOL),

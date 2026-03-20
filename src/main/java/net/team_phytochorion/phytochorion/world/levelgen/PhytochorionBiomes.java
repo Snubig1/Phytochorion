@@ -4,10 +4,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
-import net.team_phytochorion.phytochorion.Phytochorion;
 
 public class PhytochorionBiomes {
-    public static final ResourceKey<Biome> ARAUCARIA_FOREST = getKey(Phytochorion.MOD_ID,"araucaria_forest");
+    public static final ResourceKey<Biome> ARAUCARIA_FOREST = getKey("minecraft","araucaria_forest");
 
     private static ResourceKey<Biome> getKey(String mod_id, String name){
         return(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(mod_id, name)));

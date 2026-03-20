@@ -15,11 +15,15 @@ import net.team_phytochorion.phytochorion.items.PhytochorionItems;
 import net.team_phytochorion.phytochorion.misc.PhytochorionCreativeModeTabs;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionFoliagePlacers;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
+import net.team_phytochorion.phytochorion.world.levelgen.PhytochorionRegion;
 import net.team_phytochorion.phytochorion.world.levelgen.PhytochorionSurfaceRuleData;
 import org.slf4j.Logger;
 
 import net.team_phytochorion.phytochorion.blocks.PhytochorionBlocks;
+import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
+
+import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
 
 
 @Mod(Phytochorion.MOD_ID)
@@ -49,9 +53,11 @@ public class Phytochorion
     {
         event.enqueueWork(() ->
         {
+            // Given we only add two biomes, we should keep our weight relatively low.
+            Regions.register(new PhytochorionRegion(fromNamespaceAndPath(MOD_ID, "overworld"), 2));
 
             // Register our surface rules
-            SurfaceRuleManager.addToDefaultSurfaceRulesAtStage(SurfaceRuleManager.RuleCategory.OVERWORLD, SurfaceRuleManager.RuleStage.AFTER_BEDROCK,10, PhytochorionSurfaceRuleData.makeRules());
+            SurfaceRuleManager.addToDefaultSurfaceRulesAtStage(SurfaceRuleManager.RuleCategory.OVERWORLD, SurfaceRuleManager.RuleStage.AFTER_BEDROCK,0, PhytochorionSurfaceRuleData.makeRules());
         });
     }
 
