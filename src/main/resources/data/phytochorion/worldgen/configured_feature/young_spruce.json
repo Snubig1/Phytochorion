@@ -13,8 +13,8 @@
       "height": {
         "type": "minecraft:uniform",
         "value": {
-          "min_inclusive": 2,
-          "max_inclusive": 3
+          "max_inclusive": 3,
+          "min_inclusive": 2
         }
       },
       "offset": 1,
@@ -35,8 +35,8 @@
     "ignore_vines": true,
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",
-      "limit": 3,
-      "lower_size": 2,
+      "limit": 0,
+      "lower_size": 0,
       "upper_size": 0
     },
     "trunk_placer": {

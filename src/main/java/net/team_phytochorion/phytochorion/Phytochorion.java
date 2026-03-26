@@ -1,6 +1,7 @@
 package net.team_phytochorion.phytochorion;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.data.DataGenerator;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -60,6 +61,7 @@ public class Phytochorion
 
             // Register our surface rules
             SurfaceRuleManager.addToDefaultSurfaceRulesAtStage(SurfaceRuleManager.RuleCategory.OVERWORLD, SurfaceRuleManager.RuleStage.AFTER_BEDROCK,0, PhytochorionSurfaceRuleData.makeRules());
+            System.out.println("test");
         });
     }
 
