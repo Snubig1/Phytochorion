@@ -1,7 +1,13 @@
 {
   "type": "phytochorion:feature_stack",
   "config": {
-    "second_feature": "minecraft:pine_checked",
-    "first_feature": "phytochorion:patch_fern"
+    "first_feature": {
+      "feature": "phytochorion:araucaria",
+      "placement": []
+    },
+    "second_feature": {
+      "feature": "phytochorion:patch_fern",
+      "placement": []
+    }
   }
 }
