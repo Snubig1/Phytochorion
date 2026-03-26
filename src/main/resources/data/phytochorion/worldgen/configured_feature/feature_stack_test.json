@@ -1,0 +1,7 @@
+{
+  "type": "phytochorion:feature_stack",
+  "config": {
+    "second_feature": "minecraft:pine_checked",
+    "first_feature": "phytochorion:patch_fern"
+  }
+}

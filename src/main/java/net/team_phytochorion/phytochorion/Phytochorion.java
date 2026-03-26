@@ -13,6 +13,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.team_phytochorion.phytochorion.items.PhytochorionItems;
 import net.team_phytochorion.phytochorion.misc.PhytochorionCreativeModeTabs;
+import net.team_phytochorion.phytochorion.world.feature.PhytochorionFeatures;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionFoliagePlacers;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
 import net.team_phytochorion.phytochorion.world.levelgen.PhytochorionRegion;
@@ -38,6 +39,7 @@ public class Phytochorion
         modEventBus.addListener(this::commonSetup);
         PhytochorionCreativeModeTabs.register(modEventBus);
         PhytochorionBlocks.register(modEventBus);
+        PhytochorionFeatures.register(modEventBus);
         PhytochorionTrunkPlacers.register(modEventBus);
         PhytochorionFoliagePlacers.register(modEventBus);
         PhytochorionItems.register(modEventBus);
