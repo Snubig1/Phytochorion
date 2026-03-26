@@ -35,17 +35,5 @@ public class PhytochorionRegion extends Region
                 .build().forEach(point -> builder.add(point, PhytochorionBiomes.ARAUCARIA_FOREST));
 
         builder.build().forEach(mapper);
-/*List<Climate.ParameterPoint> araucariaFlat = new ParameterUtils.ParameterPointListBuilder()
-            .temperature(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.COOL)
-            .humidity(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.WET, ParameterUtils.Humidity.HUMID)
-            .continentalness(ParameterUtils.Continentalness.span(ParameterUtils.Continentalness.MID_INLAND, ParameterUtils.Continentalness.FAR_INLAND))
-            .erosion(ParameterUtils.Erosion.EROSION_3, ParameterUtils.Erosion.EROSION_4, ParameterUtils.Erosion.EROSION_5, ParameterUtils.Erosion.EROSION_6)
-            .depth(ParameterUtils.Depth.SURFACE, ParameterUtils.Depth.FLOOR)
-            .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.HIGH_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.PEAK_NORMAL, ParameterUtils.Weirdness.HIGH_SLICE_NORMAL_DESCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING, ParameterUtils.Weirdness.LOW_SLICE_NORMAL_DESCENDING, ParameterUtils.Weirdness.VALLEY, ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_VARIANT_ASCENDING, ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_ASCENDING, ParameterUtils.Weirdness.PEAK_VARIANT, ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_DESCENDING, ParameterUtils.Weirdness.MID_SLICE_VARIANT_DESCENDING)
-            .build();
-
-        araucariaMountainside.forEach(point -> builder.replaceBiome(point, PhytochorionBiomes.ARAUCARIA_FOREST));
-        araucariaFlat.forEach(point -> builder.replaceBiome(point, PhytochorionBiomes.ARAUCARIA_FOREST));
-    });*/
-}
+  }
 }
