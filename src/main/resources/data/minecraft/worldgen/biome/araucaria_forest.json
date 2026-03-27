@@ -79,13 +79,13 @@
       "minecraft:glow_lichen",
       "minecraft:patch_large_fern",
       "phytochorion:trees_araucaria_forest",
+      "phytochorion:araucaria_brambles",
       "phytochorion:young_spruce",
       "phytochorion:flower_araucaria_forest",
       "phytochorion:patch_fern",
       "minecraft:brown_mushroom_taiga",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "minecraft:patch_berry_common"
+      "minecraft:patch_pumpkin"
     ],
     [
       "minecraft:freeze_top_layer"

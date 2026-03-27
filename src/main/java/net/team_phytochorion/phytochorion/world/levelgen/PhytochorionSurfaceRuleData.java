@@ -14,7 +14,7 @@ public class PhytochorionSurfaceRuleData {
     public static SurfaceRules.RuleSource makeRules()
     {
         return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.isBiome(PhytochorionBiomes.ARAUCARIA_FOREST) ,SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(60),0),SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(1,1), SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.isBiome(PhytochorionBiomes.ARAUCARIA_FOREST) ,SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(56),0),SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(1,1), SurfaceRules.sequence(
                         SurfaceRules.ifTrue(SurfaceRules.noiseCondition(PhytochorionNoises.ARAUCARIA_SURFACE,0.20),COARSE_DIRT),
                         SurfaceRules.ifTrue(SurfaceRules.noiseCondition(PhytochorionNoises.ARAUCARIA_SURFACE,-0.30),PODZOL),
                         MUD
@@ -25,9 +25,5 @@ public class PhytochorionSurfaceRuleData {
     private static SurfaceRules.RuleSource makeStateRule(Block block)
     {
         return SurfaceRules.state(block.defaultBlockState());
-    }
-
-    private static SurfaceRules.ConditionSource surfaceNoiseAbove(double p_194809_) {
-        return SurfaceRules.noiseCondition(PhytochorionNoises.ARAUCARIA_SURFACE, p_194809_ / 8.25D, Double.MAX_VALUE);
     }
 }
