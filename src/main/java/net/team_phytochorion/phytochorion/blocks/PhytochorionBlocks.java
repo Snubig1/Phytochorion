@@ -3,6 +3,7 @@ package net.team_phytochorion.phytochorion.blocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -39,8 +40,8 @@ public class PhytochorionBlocks {
     public static final RegistryObject<Block> ARAUCARIA_LOG = registerBlock("araucaria_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final RegistryObject<Block> ARAUCARIA_NEEDLES = registerBlock("araucaria_needles", AraucariaNeedlesBlock::new);
     public static final RegistryObject<Block> ARAUCARIA_PRESSURE_PLATE = registerBlock("araucaria_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(ARAUCARIA_PLANKS.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).ignitedByLava().pushReaction(PushReaction.DESTROY), BlockSetType.OAK));
-    //change to araucaria tree grower
     public static final RegistryObject<Block> ARAUCARIA_SAPLING = registerBlock("araucaria_sapling", () -> new SaplingBlock(new AraucariaTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> POTTED_ARAUCARIA_SAPLING = registerBlock("potted_araucaria_sapling", () -> flowerPot(ARAUCARIA_SAPLING.get()));
     public static final RegistryObject<Block> ARAUCARIA_SLAB = registerBlock("araucaria_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ARAUCARIA_PLANKS.get())));
     public static final RegistryObject<Block> ARAUCARIA_STAIRS = registerBlock("araucaria_stairs", () -> new StairBlock(() -> ARAUCARIA_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(ARAUCARIA_PLANKS.get())));
     //remember to make these obtainable
@@ -64,7 +65,9 @@ public class PhytochorionBlocks {
 
 
     public static final RegistryObject<Block> BUTTERFLY_WEED = registerBlock("butterfly_weed", () -> new FlowerBlock(MobEffects.WEAKNESS, 9, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> POTTED_BUTTERFLY_WEED = registerBlock("potted_butterfly_weed", () -> flowerPot(BUTTERFLY_WEED.get()));
     public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling", () -> new SaplingBlock(new PineTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> POTTED_PINE_SAPLING = registerBlock("potted_pine_sapling", () -> flowerPot(PINE_SAPLING.get()));
     public static final RegistryObject<Block> PINE_LEAVES = registerBlock("pine_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(PhytochorionBlocks::ocelotOrParrot).isSuffocating(PhytochorionBlocks::never).isViewBlocking(PhytochorionBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(PhytochorionBlocks::never)));
 
 
@@ -83,6 +86,14 @@ public class PhytochorionBlocks {
         BLOCKS.register(eventBus);
     }
 
+    private static FlowerPotBlock flowerPot(Block pContent, FeatureFlag... pRequiredFeatures) {
+         BlockBehaviour.Properties blockbehaviour$properties = BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+        if (pRequiredFeatures.length > 0) {
+             blockbehaviour$properties = blockbehaviour$properties.requiredFeatures(pRequiredFeatures);
+        }
+        final BlockBehaviour.Properties properties = blockbehaviour$properties;
+        return new FlowerPotBlock(pContent, properties);
+    }
 
     private static boolean never(BlockState p_50806_, BlockGetter p_50807_, BlockPos p_50808_) {
         return false;
@@ -91,6 +102,6 @@ public class PhytochorionBlocks {
         return false;
     }
     private static Boolean ocelotOrParrot(BlockState p_50822_, BlockGetter p_50823_, BlockPos p_50824_, EntityType<?> p_50825_) {
-        return (boolean)(p_50825_ == EntityType.OCELOT || p_50825_ == EntityType.PARROT);
+        return (p_50825_ == EntityType.OCELOT || p_50825_ == EntityType.PARROT);
     }
 }
