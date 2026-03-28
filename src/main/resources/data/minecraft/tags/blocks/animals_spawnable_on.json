@@ -1,9 +1,6 @@
 {
   "replace": false,
   "values": [
-    "minecraft:coarse_dirt",
-    "minecraft:podzol",
-    "minecraft:moss",
-    "minecraft:mud"
+    "#phytochorion:araucaria_ground"
   ]
 }
