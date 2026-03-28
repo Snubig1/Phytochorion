@@ -7,6 +7,7 @@ import net.minecraft.world.level.biome.Biome;
 
 public class PhytochorionBiomes {
     public static final ResourceKey<Biome> ARAUCARIA_FOREST = getKey("minecraft","araucaria_forest");
+    public static final ResourceKey<Biome> SNOWY_ARAUCARIA_FOREST = getKey("minecraft","snowy_araucaria_forest");
 
     private static ResourceKey<Biome> getKey(String mod_id, String name){
         return(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(mod_id, name)));

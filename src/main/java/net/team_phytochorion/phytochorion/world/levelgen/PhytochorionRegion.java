@@ -35,5 +35,16 @@ public class PhytochorionRegion extends Region
                 .build().forEach(point -> builder.add(point, PhytochorionBiomes.ARAUCARIA_FOREST));
 
         builder.build().forEach(mapper);
+
+        new ParameterPointListBuilder()
+                .temperature(Temperature.span(Temperature.FROZEN, Temperature.ICY))
+                .humidity(Humidity.NEUTRAL, Humidity.WET, Humidity.HUMID)
+                .continentalness(Continentalness.MID_INLAND, Continentalness.FAR_INLAND)
+                .erosion(Erosion.EROSION_0, Erosion.EROSION_1, Erosion.EROSION_2)
+                .depth(Depth.SURFACE, Depth.FLOOR)
+                .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.HIGH_SLICE_NORMAL_ASCENDING, Weirdness.HIGH_SLICE_NORMAL_DESCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.LOW_SLICE_NORMAL_DESCENDING)
+                .build().forEach(point -> builder.add(point, PhytochorionBiomes.SNOWY_ARAUCARIA_FOREST));
+
+        builder.build().forEach(mapper);
   }
 }

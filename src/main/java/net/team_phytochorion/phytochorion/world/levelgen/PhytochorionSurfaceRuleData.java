@@ -14,7 +14,7 @@ public class PhytochorionSurfaceRuleData {
     public static SurfaceRules.RuleSource makeRules()
     {
         return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.isBiome(PhytochorionBiomes.ARAUCARIA_FOREST) ,SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(56),0),SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(1,1), SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.isBiome(PhytochorionBiomes.ARAUCARIA_FOREST, PhytochorionBiomes.SNOWY_ARAUCARIA_FOREST) ,SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(56),0),SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(1,1), SurfaceRules.sequence(
                         SurfaceRules.ifTrue(SurfaceRules.noiseCondition(PhytochorionNoises.ARAUCARIA_SURFACE,0.20),COARSE_DIRT),
                         SurfaceRules.ifTrue(SurfaceRules.noiseCondition(PhytochorionNoises.ARAUCARIA_SURFACE,-0.30),PODZOL),
                         MUD
