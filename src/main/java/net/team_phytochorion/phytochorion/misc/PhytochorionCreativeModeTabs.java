@@ -47,6 +47,8 @@ public class PhytochorionCreativeModeTabs {
                         pOutput.accept(PhytochorionBlocks.GINKGO_WOOD.get());
 
                         pOutput.accept(PhytochorionBlocks.BUTTERFLY_WEED.get());
+                        pOutput.accept(PhytochorionBlocks.GHOST_PIPE.get());
+                        pOutput.accept(PhytochorionBlocks.RED_GHOST_PIPE.get());
                         pOutput.accept(PhytochorionBlocks.PINE_LEAVES.get());
                         pOutput.accept(PhytochorionBlocks.PINE_SAPLING.get());
                     })
