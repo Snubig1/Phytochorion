@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/potted_araucaria_sapling"
+      "model": "phytochorion:block/potted_araucaria_sapling"
     }
   }
 }

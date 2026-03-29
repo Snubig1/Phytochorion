@@ -41,7 +41,7 @@ public class PhytochorionBlocks {
     public static final RegistryObject<Block> ARAUCARIA_NEEDLES = registerBlock("araucaria_needles", AraucariaNeedlesBlock::new);
     public static final RegistryObject<Block> ARAUCARIA_PRESSURE_PLATE = registerBlock("araucaria_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(ARAUCARIA_PLANKS.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).ignitedByLava().pushReaction(PushReaction.DESTROY), BlockSetType.OAK));
     public static final RegistryObject<Block> ARAUCARIA_SAPLING = registerBlock("araucaria_sapling", () -> new SaplingBlock(new AraucariaTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
-    public static final RegistryObject<Block> POTTED_ARAUCARIA_SAPLING = registerBlock("potted_araucaria_sapling", () -> flowerPot(ARAUCARIA_SAPLING.get()));
+    public static final RegistryObject<Block> POTTED_ARAUCARIA_SAPLING = BLOCKS.register("potted_araucaria_sapling", () -> flowerPot(ARAUCARIA_SAPLING.get()));
     public static final RegistryObject<Block> ARAUCARIA_SLAB = registerBlock("araucaria_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ARAUCARIA_PLANKS.get())));
     public static final RegistryObject<Block> ARAUCARIA_STAIRS = registerBlock("araucaria_stairs", () -> new StairBlock(() -> ARAUCARIA_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(ARAUCARIA_PLANKS.get())));
     //remember to make these obtainable
@@ -65,9 +65,9 @@ public class PhytochorionBlocks {
 
 
     public static final RegistryObject<Block> BUTTERFLY_WEED = registerBlock("butterfly_weed", () -> new FlowerBlock(MobEffects.WEAKNESS, 9, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> POTTED_BUTTERFLY_WEED = registerBlock("potted_butterfly_weed", () -> flowerPot(BUTTERFLY_WEED.get()));
+    public static final RegistryObject<Block> POTTED_BUTTERFLY_WEED = BLOCKS.register("potted_butterfly_weed", () -> flowerPot(BUTTERFLY_WEED.get()));
     public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling", () -> new SaplingBlock(new PineTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
-    public static final RegistryObject<Block> POTTED_PINE_SAPLING = registerBlock("potted_pine_sapling", () -> flowerPot(PINE_SAPLING.get()));
+    public static final RegistryObject<Block> POTTED_PINE_SAPLING = BLOCKS.register("potted_pine_sapling", () -> flowerPot(PINE_SAPLING.get()));
     public static final RegistryObject<Block> PINE_LEAVES = registerBlock("pine_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(PhytochorionBlocks::ocelotOrParrot).isSuffocating(PhytochorionBlocks::never).isViewBlocking(PhytochorionBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(PhytochorionBlocks::never)));
 
 
