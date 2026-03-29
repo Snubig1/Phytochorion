@@ -15,20 +15,17 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
 
 public class AraucariaLeavesBlock extends LeavesBlock {
-    public static final BooleanProperty SNOWY = BlockStateProperties.SNOWY;
 	public AraucariaLeavesBlock() {
     super(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES));
-        this.registerDefaultState(this.stateDefinition.any().setValue(SNOWY, false).setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(SNOWY, DISTANCE, PERSISTENT, WATERLOGGED);
+        builder.add(DISTANCE, PERSISTENT, WATERLOGGED);
     }
 
 	@Override
@@ -94,7 +91,7 @@ public class AraucariaLeavesBlock extends LeavesBlock {
                 break;
             }
         }
-        return p_54436_.setValue(DISTANCE, Integer.valueOf(i));
+        return p_54436_.setValue(DISTANCE, i);
     }
 
     private static int getDistanceAt(BlockState p_54464_) {
