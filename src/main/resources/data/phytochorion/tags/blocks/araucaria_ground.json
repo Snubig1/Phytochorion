@@ -1,6 +1,7 @@
 {
   "values": [
     "minecraft:coarse_dirt",
+    "minecraft:dirt",
     "minecraft:podzol",
     "minecraft:moss_block",
     "minecraft:mud"
