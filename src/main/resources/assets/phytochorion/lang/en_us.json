@@ -1,41 +1,62 @@
 {
-  "block.phytochorion.araucaria_needles": "Araucaria Needles",
-  "block.phytochorion.araucaria_sign": "Araucaria Sign",
+  "block.phytochorion.araucaria_branches": "Araucaria Branches",
+  "block.phytochorion.araucaria_button": "Araucaria Button",
+  "block.phytochorion.araucaria_door": "Araucaria Door",
+  "block.phytochorion.araucaria_fence": "Araucaria Fence",
+  "block.phytochorion.araucaria_fence_gate": "Araucaria Fence Gate",
   "block.phytochorion.araucaria_hanging_sign": "Araucaria Hanging Sign",
-  "block.phytochorion.ginkgo_sign": "Ginkgo Sign",
-  "block.phytochorion.ginkgo_hanging_sign": "Ginkgo Hanging Sign",
+  "block.phytochorion.araucaria_leaves": "Araucaria Leaves",
+  "block.phytochorion.araucaria_log": "Araucaria Log",
+  "block.phytochorion.araucaria_needles": "Araucaria Needles",
   "block.phytochorion.araucaria_planks": "Araucaria Planks",
+  "block.phytochorion.araucaria_pressure_plate": "Araucaria Pressure Plate",
   "block.phytochorion.araucaria_sapling": "Araucaria Sapling",
-  "block.phytochorion.pine_sapling": "Pine Sapling",
-  "block.phytochorion.butterfly_weed": "Butterfly Weed",
+  "block.phytochorion.araucaria_slab": "Araucaria Slab",
+  "block.phytochorion.araucaria_sign": "Araucaria Sign",
+  "block.phytochorion.araucaria_stairs": "Araucaria Stairs",
+  "block.phytochorion.stripped_araucaria_log": "Stripped Araucaria Log",
+  "block.phytochorion.stripped_araucaria_wood": "Stripped Araucaria Wood",
+  "block.phytochorion.araucaria_trapdoor": "Araucaria Trapdoor",
+  "block.phytochorion.araucaria_wood": "Araucaria Wood",
+
+
+
+  "block.phytochorion.ginkgo_button": "Ginkgo Button",
+  "block.phytochorion.ginkgo_door": "Ginkgo Door",
+  "block.phytochorion.ginkgo_fence": "Ginkgo Fence",
+  "block.phytochorion.ginkgo_fence_gate": "Ginkgo Fence Gate",
+  "block.phytochorion.ginkgo_hanging_sign": "Ginkgo Hanging Sign",
+  "block.phytochorion.ginkgo_leaves": "Ginkgo Leaves",
+  "block.phytochorion.ginkgo_log": "Ginkgo Log",
+  "block.phytochorion.ginkgo_planks": "Ginkgo Planks",
+  "block.phytochorion.ginkgo_pressure_plate": "Ginkgo Pressure Plate",
+  "block.phytochorion.ginkgo_slab": "Ginkgo Slab",
+  "block.phytochorion.ginkgo_sign": "Ginkgo Sign",
+  "block.phytochorion.ginkgo_stairs": "Ginkgo Stairs",
+  "block.phytochorion.stripped_ginkgo_log": "Stripped Ginkgo Log",
+  "block.phytochorion.stripped_ginkgo_wood": "Stripped Ginkgo Wood",
+  "block.phytochorion.ginkgo_trapdoor": "Ginkgo Trapdoor",
+  "block.phytochorion.ginkgo_wood": "Ginkgo Wood",
+
+
+
   "block.phytochorion.ghost_pipe": "Ghost Pipe",
   "block.phytochorion.red_ghost_pipe": "Red Ghost Pipe",
-  "block.phytochorion.araucaria_leaves": "Araucaria Leaves",
+
+
+
   "block.phytochorion.pine_leaves": "Pine Leaves",
+  "block.phytochorion.pine_sapling": "Pine Sapling",
+
+
+  "block.phytochorion.butterfly_weed": "Butterfly Weed",
+
+
+
   "block.phytochorion.reinforced_glass_panes": "Reinforced Glass Panes",
-  "block.phytochorion.araucaria_fence_gate": "Araucaria Fence Gate",
   "block.phytochorion.info_stand": "Info Stand",
-  "block.phytochorion.araucaria_door": "Araucaria Door",
-  "block.phytochorion.araucaria_stairs": "Araucaria Stairs",
-  "block.phytochorion.ginkgo_leaves": "Ginkgo Leaves",
-  "block.phytochorion.ginkgo_slab": "Ginkgo Slab",
-  "block.phytochorion.ginkgo_planks": "Ginkgo Planks",
-  "block.phytochorion.araucaria_trapdoor": "Araucaria Trapdoor",
-  "block.phytochorion.araucaria_branches": "Araucaria Branches",
-  "block.phytochorion.ginkgo_button": "Ginkgo Button",
-  "block.phytochorion.ginkgo_wood": "Ginkgo Wood",
-  "block.phytochorion.ginkgo_fence_gate": "Ginkgo Fence Gate",
-  "block.phytochorion.ginkgo_stairs": "Ginkgo Stairs",
-  "block.phytochorion.stripped_araucaria_wood": "Stripped Araucaria Wood",
-  "block.phytochorion.ginkgo_pressure_plate": "Ginkgo Pressure Plate",
-  "block.phytochorion.araucaria_button": "Araucaria Button",
-  "block.phytochorion.ginkgo_log": "Ginkgo Log",
-  "block.phytochorion.araucaria_pressure_plate": "Araucaria Pressure Plate",
-  "block.phytochorion.araucaria_wood": "Araucaria Wood",
-  "block.phytochorion.ginkgo_fence": "Ginkgo Fence",
-  "block.phytochorion.stripped_araucaria_log": "Stripped Araucaria Log",
-  "block.phytochorion.araucaria_log": "Araucaria Log",
-  "block.phytochorion.araucaria_fence": "Araucaria Fence",
-  "block.phytochorion.araucaria_slab": "Araucaria Slab",
+
+
+
   "creativetab.phytochorion_tab": "Phytochorion"
 }

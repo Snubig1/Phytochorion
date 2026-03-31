@@ -39,6 +39,7 @@ public class PhytochorionCreativeModeTabs {
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_WOOD.get());
 
                         pOutput.accept(PhytochorionBlocks.GINKGO_BUTTON.get());
+                        pOutput.accept(PhytochorionBlocks.GINKGO_DOOR.get());
                         pOutput.accept(PhytochorionBlocks.GINKGO_FENCE.get());
                         pOutput.accept(PhytochorionBlocks.GINKGO_FENCE_GATE.get());
                         pOutput.accept(PhytochorionBlocks.GINKGO_LEAVES.get());
@@ -49,6 +50,9 @@ public class PhytochorionCreativeModeTabs {
                         pOutput.accept(PhytochorionItems.GINKGO_SIGN.get());
                         pOutput.accept(PhytochorionItems.GINKGO_HANGING_SIGN.get());
                         pOutput.accept(PhytochorionBlocks.GINKGO_STAIRS.get());
+                        pOutput.accept(PhytochorionBlocks.STRIPPED_GINKGO_LOG.get());
+                        pOutput.accept(PhytochorionBlocks.STRIPPED_GINKGO_WOOD.get());
+                        pOutput.accept(PhytochorionBlocks.GINKGO_TRAPDOOR.get());
                         pOutput.accept(PhytochorionBlocks.GINKGO_WOOD.get());
 
                         pOutput.accept(PhytochorionBlocks.BUTTERFLY_WEED.get());
