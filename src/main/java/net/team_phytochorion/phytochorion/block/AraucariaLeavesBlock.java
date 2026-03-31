@@ -1,5 +1,5 @@
 
-package net.team_phytochorion.phytochorion.blocks;
+package net.team_phytochorion.phytochorion.block;
 
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Blocks;

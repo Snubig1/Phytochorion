@@ -1,5 +1,5 @@
 
-package net.team_phytochorion.phytochorion.blocks;
+package net.team_phytochorion.phytochorion.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

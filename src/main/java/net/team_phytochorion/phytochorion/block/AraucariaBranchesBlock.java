@@ -1,5 +1,5 @@
 
-package net.team_phytochorion.phytochorion.blocks;
+package net.team_phytochorion.phytochorion.block;
 
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;

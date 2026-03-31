@@ -3,7 +3,7 @@ package net.team_phytochorion.phytochorion.world.feature.tree.Custom;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.RandomSource;
-import net.team_phytochorion.phytochorion.blocks.PhytochorionBlocks;
+import net.team_phytochorion.phytochorion.block.PhytochorionBlocks;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

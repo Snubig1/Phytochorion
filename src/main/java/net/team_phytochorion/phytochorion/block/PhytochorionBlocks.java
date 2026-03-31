@@ -1,4 +1,4 @@
-package net.team_phytochorion.phytochorion.blocks;
+package net.team_phytochorion.phytochorion.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
@@ -43,6 +43,8 @@ public class PhytochorionBlocks {
     public static final RegistryObject<Block> ARAUCARIA_SAPLING = registerBlock("araucaria_sapling", () -> new SaplingBlock(new AraucariaTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<Block> POTTED_ARAUCARIA_SAPLING = BLOCKS.register("potted_araucaria_sapling", () -> flowerPot(ARAUCARIA_SAPLING.get()));
     public static final RegistryObject<Block> ARAUCARIA_SLAB = registerBlock("araucaria_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ARAUCARIA_PLANKS.get())));
+    //public static final RegistryObject<Block> ARAUCARIA_SIGN = registerBlock("araucaria_sign", () -> new StandingSignBlock(BlockBehaviour.Properties.of().mapColor(ARAUCARIA_PLANKS.get().defaultMapColor()).instrument(NoteBlockInstrument.BASS).forceSolidOn().noCollission().strength(1.0F), WoodType.DARK_OAK));
+    //public static final RegistryObject<Block> ARAUCARIA_WALL_SIGN = registerBlock("araucaria_wall_sign", () -> new WallSignBlock(BlockBehaviour.Properties.of().mapColor(ARAUCARIA_PLANKS.get().defaultMapColor()).instrument(NoteBlockInstrument.BASS).forceSolidOn().noCollission().strength(1.0F).lootFrom(ARAUCARIA_SIGN), WoodType.DARK_OAK));
     public static final RegistryObject<Block> ARAUCARIA_STAIRS = registerBlock("araucaria_stairs", () -> new StairBlock(() -> ARAUCARIA_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(ARAUCARIA_PLANKS.get())));
     //remember to make these obtainable
     public static final RegistryObject<Block> STRIPPED_ARAUCARIA_LOG = registerBlock("stripped_araucaria_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_CYAN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));

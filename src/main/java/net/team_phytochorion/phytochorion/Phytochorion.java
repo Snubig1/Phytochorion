@@ -1,7 +1,6 @@
 package net.team_phytochorion.phytochorion;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.data.DataGenerator;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -21,7 +20,7 @@ import net.team_phytochorion.phytochorion.world.levelgen.PhytochorionRegion;
 import net.team_phytochorion.phytochorion.world.levelgen.PhytochorionSurfaceRuleData;
 import org.slf4j.Logger;
 
-import net.team_phytochorion.phytochorion.blocks.PhytochorionBlocks;
+import net.team_phytochorion.phytochorion.block.PhytochorionBlocks;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 

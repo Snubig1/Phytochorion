@@ -8,7 +8,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.team_phytochorion.phytochorion.Phytochorion;
-import net.team_phytochorion.phytochorion.blocks.PhytochorionBlocks;
+import net.team_phytochorion.phytochorion.block.PhytochorionBlocks;
 
 public class PhytochorionCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Phytochorion.MOD_ID);
@@ -29,6 +29,7 @@ public class PhytochorionCreativeModeTabs {
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_PRESSURE_PLATE.get());
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_SAPLING.get());
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_SLAB.get());
+                        //pOutput.accept(PhytochorionBlocks.ARAUCARIA_SIGN.get());
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_STAIRS.get());
                         pOutput.accept(PhytochorionBlocks.STRIPPED_ARAUCARIA_LOG.get());
                         pOutput.accept(PhytochorionBlocks.STRIPPED_ARAUCARIA_WOOD.get());
