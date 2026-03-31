@@ -1,6 +1,7 @@
 package net.team_phytochorion.phytochorion;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -11,8 +12,10 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.team_phytochorion.phytochorion.block.entity.PhytochorionBlockEntities;
 import net.team_phytochorion.phytochorion.items.PhytochorionItems;
 import net.team_phytochorion.phytochorion.misc.PhytochorionCreativeModeTabs;
+import net.team_phytochorion.phytochorion.misc.PhytochorionWoodTypes;
 import net.team_phytochorion.phytochorion.world.feature.PhytochorionFeatures;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionFoliagePlacers;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
@@ -39,6 +42,7 @@ public class Phytochorion
         modEventBus.addListener(this::commonSetup);
         PhytochorionCreativeModeTabs.register(modEventBus);
         PhytochorionBlocks.register(modEventBus);
+        PhytochorionBlockEntities.register(modEventBus);
         PhytochorionFeatures.register(modEventBus);
         PhytochorionTrunkPlacers.register(modEventBus);
         PhytochorionFoliagePlacers.register(modEventBus);
@@ -79,7 +83,8 @@ public class Phytochorion
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            Sheets.addWoodType(PhytochorionWoodTypes.ARAUCARIA);
+            Sheets.addWoodType(PhytochorionWoodTypes.GINKGO);
         }
     }
 }

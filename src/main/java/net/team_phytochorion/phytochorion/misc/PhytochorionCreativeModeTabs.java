@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.team_phytochorion.phytochorion.Phytochorion;
 import net.team_phytochorion.phytochorion.block.PhytochorionBlocks;
+import net.team_phytochorion.phytochorion.items.PhytochorionItems;
 
 public class PhytochorionCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Phytochorion.MOD_ID);
@@ -29,7 +30,8 @@ public class PhytochorionCreativeModeTabs {
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_PRESSURE_PLATE.get());
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_SAPLING.get());
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_SLAB.get());
-                        //pOutput.accept(PhytochorionBlocks.ARAUCARIA_SIGN.get());
+                        pOutput.accept(PhytochorionItems.ARAUCARIA_SIGN.get());
+                        pOutput.accept(PhytochorionItems.ARAUCARIA_HANGING_SIGN.get());
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_STAIRS.get());
                         pOutput.accept(PhytochorionBlocks.STRIPPED_ARAUCARIA_LOG.get());
                         pOutput.accept(PhytochorionBlocks.STRIPPED_ARAUCARIA_WOOD.get());
@@ -44,6 +46,8 @@ public class PhytochorionCreativeModeTabs {
                         pOutput.accept(PhytochorionBlocks.GINKGO_PLANKS.get());
                         pOutput.accept(PhytochorionBlocks.GINKGO_PRESSURE_PLATE.get());
                         pOutput.accept(PhytochorionBlocks.GINKGO_SLAB.get());
+                        pOutput.accept(PhytochorionItems.GINKGO_SIGN.get());
+                        pOutput.accept(PhytochorionItems.GINKGO_HANGING_SIGN.get());
                         pOutput.accept(PhytochorionBlocks.GINKGO_STAIRS.get());
                         pOutput.accept(PhytochorionBlocks.GINKGO_WOOD.get());
 
