@@ -11,6 +11,7 @@ public class PhytochorionStandingSignBlock extends StandingSignBlock {
     public PhytochorionStandingSignBlock(Properties pProperties, WoodType pType) {
         super(pProperties, pType);
     }
+
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState){
         return new PhytochorionSignBlockEntity(pPos, pState);

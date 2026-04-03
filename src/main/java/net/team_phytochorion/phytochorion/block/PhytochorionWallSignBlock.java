@@ -11,6 +11,7 @@ public class PhytochorionWallSignBlock  extends WallSignBlock {
     public PhytochorionWallSignBlock(Properties pProperties, WoodType pType) {
         super(pProperties, pType);
     }
+
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState){
         return new PhytochorionSignBlockEntity(pPos, pState);
