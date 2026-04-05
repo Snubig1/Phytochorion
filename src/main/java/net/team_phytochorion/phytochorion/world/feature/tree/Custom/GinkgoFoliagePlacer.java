@@ -65,24 +65,16 @@ public class GinkgoFoliagePlacer extends FoliagePlacer {
 
 
 
-        int sideHeight =random.nextInt(-5,-3);
-        int topSideHeight =random.nextInt(-2,0);
-        for (int y =sideHeight; y <= topSideHeight; ++y)
+        for (int y =-4; y <= -2; ++y)
             tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().above(y).north(2).east(random.nextInt(-1, 2)));
 
-        sideHeight =random.nextInt(-5,-3);
-        topSideHeight =random.nextInt(-2,0);
-        for (int y =sideHeight; y <= topSideHeight; ++y)
+        for (int y =-4; y <= -2; ++y)
             tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().above(y).south(2).west(random.nextInt(-1, 2)));
 
-        sideHeight =random.nextInt(-5,-3);
-        topSideHeight =random.nextInt(-2,0);
-        for (int y =sideHeight; y <= topSideHeight; ++y)
+        for (int y =-4; y <= -2; ++y)
             tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().above(y).west(2).south(random.nextInt(-1, 2)));
 
-        sideHeight =random.nextInt(-5,-3);
-        topSideHeight =random.nextInt(-2,0);
-        for (int y =sideHeight; y <= topSideHeight; ++y)
+        for (int y =-4; y <= -2; ++y)
             tryPlaceLeaf(level, foliageSetter, random, configuration, attachment.pos().above(y).east(2).north(random.nextInt(-1, 2)));
 
     }

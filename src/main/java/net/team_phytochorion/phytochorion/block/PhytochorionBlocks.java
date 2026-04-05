@@ -23,6 +23,7 @@ import net.team_phytochorion.phytochorion.Phytochorion;
 import net.team_phytochorion.phytochorion.items.PhytochorionItems;
 import net.team_phytochorion.phytochorion.misc.PhytochorionWoodTypes;
 import net.team_phytochorion.phytochorion.world.feature.tree.AraucariaTreeGrower;
+import net.team_phytochorion.phytochorion.world.feature.tree.GinkgoTreeGrower;
 import net.team_phytochorion.phytochorion.world.feature.tree.PineTreeGrower;
 
 import java.util.function.Supplier;
@@ -67,6 +68,8 @@ public class PhytochorionBlocks {
     public static final RegistryObject<Block> STRIPPED_GINKGO_LOG = registerBlock("stripped_ginkgo_log", () -> log(null,MapColor.TERRACOTTA_YELLOW ,MapColor.TERRACOTTA_YELLOW));
     public static final RegistryObject<Block> GINKGO_LOG = registerBlock("ginkgo_log", () -> log(STRIPPED_GINKGO_LOG.get().defaultBlockState(),MapColor.TERRACOTTA_YELLOW ,MapColor.WOOD));
     public static final RegistryObject<Block> GINKGO_PRESSURE_PLATE = registerBlock("ginkgo_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(GINKGO_PLANKS.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).ignitedByLava().pushReaction(PushReaction.DESTROY), BlockSetType.OAK));
+    public static final RegistryObject<Block> GINKGO_SAPLING = registerBlock("ginkgo_sapling", () -> new SaplingBlock(new GinkgoTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> POTTED_GINKGO_SAPLING = BLOCKS.register("potted_ginkgo_sapling", () -> flowerPot(GINKGO_SAPLING.get()));
     public static final RegistryObject<Block> GINKGO_SLAB = registerBlock("ginkgo_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GINKGO_PLANKS.get())));
 
     public static final RegistryObject<Block> GINKGO_SIGN = BLOCKS.register("ginkgo_sign", () -> new PhytochorionStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN).mapColor(GINKGO_PLANKS.get().defaultMapColor()), PhytochorionWoodTypes.GINKGO));

@@ -60,6 +60,7 @@ public class PhytochorionCreativeModeTabs {
                         pOutput.accept(PhytochorionBlocks.PINE_LEAVES.get());
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_NEEDLES.get());
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_SAPLING.get());
+                        pOutput.accept(PhytochorionBlocks.GINKGO_SAPLING.get());
                         pOutput.accept(PhytochorionBlocks.PINE_SAPLING.get());
                         pOutput.accept(PhytochorionBlocks.BUTTERFLY_WEED.get());
                         pOutput.accept(PhytochorionBlocks.GHOST_PIPE.get());
