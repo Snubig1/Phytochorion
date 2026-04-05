@@ -14,6 +14,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.team_phytochorion.phytochorion.block.entity.PhytochorionBlockEntities;
 import net.team_phytochorion.phytochorion.items.PhytochorionItems;
+import net.team_phytochorion.phytochorion.misc.PhytochorionBurnables;
 import net.team_phytochorion.phytochorion.misc.PhytochorionCreativeModeTabs;
 import net.team_phytochorion.phytochorion.misc.PhytochorionWoodTypes;
 import net.team_phytochorion.phytochorion.world.feature.PhytochorionFeatures;
@@ -61,7 +62,7 @@ public class Phytochorion
         {
             // Given we only add two biomes, we should keep our weight relatively low.
             Regions.register(new PhytochorionRegion(fromNamespaceAndPath(MOD_ID, "overworld"), 1));
-
+            PhytochorionBurnables.bootStrap();
             // Register our surface rules
             SurfaceRuleManager.addToDefaultSurfaceRulesAtStage(SurfaceRuleManager.RuleCategory.OVERWORLD, SurfaceRuleManager.RuleStage.AFTER_BEDROCK,0, PhytochorionSurfaceRuleData.makeRules());
             System.out.println("test");

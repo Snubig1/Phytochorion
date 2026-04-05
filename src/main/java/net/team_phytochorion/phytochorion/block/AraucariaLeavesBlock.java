@@ -5,16 +5,12 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 
 
 public class AraucariaLeavesBlock extends LeavesBlock {
@@ -22,16 +18,6 @@ public class AraucariaLeavesBlock extends LeavesBlock {
     super(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES));
         this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
     }
-
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(DISTANCE, PERSISTENT, WATERLOGGED);
-    }
-
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 1;
-	}
 
     @Override
     public void tick(BlockState p_54426_, ServerLevel p_54427_, BlockPos p_54428_, RandomSource p_54429_) {
@@ -54,12 +40,6 @@ public class AraucariaLeavesBlock extends LeavesBlock {
         }
 
     }
-
-	@Override
-	public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-		return 30;
-	}
-
     static Vec3i[] directionArray = new Vec3i[]{
             new Vec3i(1,0,0),
             new Vec3i(-1,0,0),

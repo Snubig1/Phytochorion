@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
-public class full_block_climbable {
+public class FullBlockClimbable {
     public static Optional<BlockPos> isOnFullBlockClimbable(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull LivingEntity entity) {
         if (!(entity instanceof Player && entity.isSpectator())) {
             AABB entityBoundingBox = entity.getBoundingBox();

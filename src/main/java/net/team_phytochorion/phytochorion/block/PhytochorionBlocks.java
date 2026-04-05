@@ -81,12 +81,12 @@ public class PhytochorionBlocks {
 
 
 
-    public static final RegistryObject<Block> GHOST_PIPE = registerBlock("ghost_pipe", () -> new FlowerBlock(MobEffects.WEAKNESS, 9, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> GHOST_PIPE = registerBlock("ghost_pipe", () -> new FlowerBlock(() -> MobEffects.WEAKNESS, 9, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> POTTED_GHOST_PIPE = BLOCKS.register("potted_ghost_pipe", () -> flowerPot(GHOST_PIPE.get()));
-    public static final RegistryObject<Block> RED_GHOST_PIPE = registerBlock("red_ghost_pipe", () -> new FlowerBlock(MobEffects.WEAKNESS, 9, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> RED_GHOST_PIPE = registerBlock("red_ghost_pipe", () -> new FlowerBlock(() -> MobEffects.WEAKNESS, 9, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> POTTED_RED_GHOST_PIPE = BLOCKS.register("potted_red_ghost_pipe", () -> flowerPot(RED_GHOST_PIPE.get()));
 
-    public static final RegistryObject<Block> BUTTERFLY_WEED = registerBlock("butterfly_weed", () -> new FlowerBlock(MobEffects.WEAKNESS, 9, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> BUTTERFLY_WEED = registerBlock("butterfly_weed", () -> new FlowerBlock(() -> MobEffects.WEAKNESS, 9, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> POTTED_BUTTERFLY_WEED = BLOCKS.register("potted_butterfly_weed", () -> flowerPot(BUTTERFLY_WEED.get()));
     public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling", () -> new SaplingBlock(new PineTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<Block> POTTED_PINE_SAPLING = BLOCKS.register("potted_pine_sapling", () -> flowerPot(PINE_SAPLING.get()));
@@ -114,7 +114,7 @@ public class PhytochorionBlocks {
              blockbehaviour$properties = blockbehaviour$properties.requiredFeatures(pRequiredFeatures);
         }
         final BlockBehaviour.Properties properties = blockbehaviour$properties;
-        return new FlowerPotBlock(pContent, properties);
+        return new FlowerPotBlock(null, () -> pContent, properties);
     }
 
     private static RotatedPillarBlock log(BlockState pStrippedBlock ,MapColor pTopMapColor, MapColor pSideMapColor) {

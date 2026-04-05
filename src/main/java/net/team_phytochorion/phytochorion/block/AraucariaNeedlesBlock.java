@@ -2,7 +2,6 @@
 package net.team_phytochorion.phytochorion.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.BlockGetter;
@@ -31,16 +30,6 @@ public class AraucariaNeedlesBlock extends FlowerBlock {
 	@Override
 	public int getEffectDuration() {
 		return 200;
-	}
-
-	@Override
-	public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-		return 100;
-	}
-
-	@Override
-	public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-		return 60;
 	}
 
 	@Override

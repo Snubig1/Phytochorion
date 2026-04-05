@@ -69,10 +69,4 @@ public class AraucariaBranchesBlock extends RotatedPillarBlock implements Simple
 		}
 		return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
 	}
-
-	@Override
-	public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-		return 15;
-	}
-
 }
