@@ -49,22 +49,22 @@ public class PhytochorionRegion extends Region
 
         new ParameterPointListBuilder()
                 .temperature(Temperature.span(Temperature.NEUTRAL, Temperature.WARM))
-                .humidity(Humidity.NEUTRAL, Humidity.WET, Humidity.HUMID)
-                .continentalness(Continentalness.MID_INLAND, Continentalness.FAR_INLAND)
-                .erosion(Erosion.EROSION_2, Erosion.EROSION_3, Erosion.EROSION_4)
+                .humidity(Humidity.NEUTRAL, Humidity.WET)
+                .continentalness(Continentalness.MID_INLAND, Continentalness.FAR_INLAND, Continentalness.INLAND)
+                .erosion(Erosion.EROSION_2, Erosion.EROSION_3, Erosion.EROSION_4, Erosion.EROSION_5)
                 .depth(Depth.SURFACE, Depth.FLOOR)
-                .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.HIGH_SLICE_NORMAL_ASCENDING, Weirdness.HIGH_SLICE_NORMAL_DESCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.LOW_SLICE_NORMAL_DESCENDING)
+                .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.HIGH_SLICE_NORMAL_ASCENDING, Weirdness.PEAK_NORMAL,Weirdness.HIGH_SLICE_NORMAL_DESCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.LOW_SLICE_NORMAL_DESCENDING, Weirdness.LOW_SLICE_VARIANT_ASCENDING, Weirdness.MID_SLICE_VARIANT_ASCENDING, Weirdness.HIGH_SLICE_VARIANT_ASCENDING, Weirdness.PEAK_VARIANT, Weirdness.HIGH_SLICE_VARIANT_DESCENDING, Weirdness.MID_SLICE_VARIANT_DESCENDING)
                 .build().forEach(point -> builder.add(point, PhytochorionBiomes.GINKGO_FOREST));
 
         builder.build().forEach(mapper);
 
         new ParameterPointListBuilder()
                 .temperature(Temperature.span(Temperature.NEUTRAL, Temperature.WARM))
-                .humidity(Humidity.NEUTRAL, Humidity.WET, Humidity.HUMID)
-                .continentalness(Continentalness.MID_INLAND, Continentalness.FAR_INLAND)
-                .erosion(Erosion.EROSION_4, Erosion.EROSION_5, Erosion.EROSION_6)
+                .humidity(Humidity.NEUTRAL)
+                .continentalness(Continentalness.COAST, Continentalness.NEAR_INLAND, Continentalness.MID_INLAND, Continentalness.FAR_INLAND)
+                .erosion(Erosion.EROSION_1, Erosion.EROSION_2, Erosion.EROSION_3, Erosion.EROSION_4, Erosion.EROSION_5)
                 .depth(Depth.SURFACE, Depth.FLOOR)
-                .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.HIGH_SLICE_NORMAL_ASCENDING, Weirdness.HIGH_SLICE_NORMAL_DESCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.LOW_SLICE_NORMAL_DESCENDING)
+                .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.HIGH_SLICE_NORMAL_ASCENDING, Weirdness.PEAK_NORMAL,Weirdness.HIGH_SLICE_NORMAL_DESCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.LOW_SLICE_NORMAL_DESCENDING, Weirdness.VALLEY, Weirdness.LOW_SLICE_VARIANT_ASCENDING, Weirdness.MID_SLICE_VARIANT_ASCENDING, Weirdness.HIGH_SLICE_VARIANT_ASCENDING, Weirdness.PEAK_VARIANT, Weirdness.HIGH_SLICE_VARIANT_DESCENDING, Weirdness.MID_SLICE_VARIANT_DESCENDING)
                 .build().forEach(point -> builder.add(point, PhytochorionBiomes.SPARSE_GINKGO_FOREST));
 
         builder.build().forEach(mapper);
