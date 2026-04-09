@@ -60,11 +60,9 @@ public class Phytochorion
     {
         event.enqueueWork(() ->
         {
-            // Given we only add two biomes, we should keep our weight relatively low.
             Regions.register(new PhytochorionRegion(fromNamespaceAndPath(MOD_ID, "overworld"), 1));
-            PhytochorionBurnables.bootStrap();
-            // Register our surface rules
             SurfaceRuleManager.addToDefaultSurfaceRulesAtStage(SurfaceRuleManager.RuleCategory.OVERWORLD, SurfaceRuleManager.RuleStage.AFTER_BEDROCK,0, PhytochorionSurfaceRuleData.makeRules());
+            PhytochorionBurnables.AddBurnables();
             System.out.println("test");
         });
     }

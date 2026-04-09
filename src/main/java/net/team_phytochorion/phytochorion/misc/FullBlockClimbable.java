@@ -1,6 +1,7 @@
 package net.team_phytochorion.phytochorion.misc;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
@@ -19,6 +20,7 @@ public class FullBlockClimbable {
             int minX = Mth.floor(entityBoundingBox.minX);
             int minY = Mth.floor(entityBoundingBox.minY);
             int minZ = Mth.floor(entityBoundingBox.minZ);
+            level.addParticle(ParticleTypes.NOTE, minX, minY, minZ, 0, 0, 0);
 
             for (int y2 = minY; (double) y2 < entityBoundingBox.maxY; ++y2) {
                 for (int x2 = minX; (double) x2 < entityBoundingBox.maxX; ++x2) {

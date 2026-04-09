@@ -6,7 +6,7 @@ import net.team_phytochorion.phytochorion.block.PhytochorionBlocks;
 
 public class PhytochorionBurnables {
 
-    public static void bootStrap() {
+    public static void AddBurnables() {
         FireBlock fireblock = (FireBlock) Blocks.FIRE;
         fireblock.setFlammable(PhytochorionBlocks.ARAUCARIA_PLANKS.get(), 5, 20);
         fireblock.setFlammable(PhytochorionBlocks.GINKGO_PLANKS.get(), 5, 20);
