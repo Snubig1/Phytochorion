@@ -32,7 +32,6 @@ public abstract class MixinFullBlockClimbable extends Entity {
         LivingEntity thisEntity = (LivingEntity)(Object)this;
         level().addParticle(ParticleTypes.NOTE, thisEntity.getBoundingBox().minX, thisEntity.getBoundingBox().maxY, thisEntity.getBoundingBox().minZ, 0, 0, 0);
 
-
     }
 }
 
