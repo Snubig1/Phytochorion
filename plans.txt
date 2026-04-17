@@ -1,0 +1,64 @@
+
+
+Araucaria Forest:
+    * witches (undead) hides in the fog, and throws fog bottles (may be cured)
+    * Structures: (related to the witches)
+    * abandoned pillager outposts (maybe skeleton pillager)
+    * Fog: volumetric fog caused by potions (thrown and in cauldron)
+    * potion of true sight: lets you see invisible entities, and through fog for a few seconds (brewed from araucaria needles
+
+Ginkgo Forest:
+    * increased pig spawns
+    * Ginkgo tree: big and small
+    * ruins
+    * potential graveyard structure
+    * decently lush/bright colors
+    * ginkgo ground litter
+
+Ghost Pipe:
+    * https://www.youtube.com/watch?v=UVJ6CmwtFi4&list=PLKGarocXCE1H9Y21-pxjt5Pt8bW14twa-&index=40
+    * generate in dark oak (and pale garden) and structures in ginkgo (maybe potted in araucaria witch structure)
+    * can be crafted into black dye
+    * damaged texture
+    * Anti Growing Area
+    * potion effect brewed from dried ghost pipe (dried on a campfire), disables regaining health for a few moments
+    * spreads when bonemealed
+
+Butterfly Weed:
+    * generate in Flower forest, cherry grove, ginkgo, and rarely in plans and sunflower plains
+    * can be crafted into orange dye
+    * Custom Data Driven Butterfly Paricles
+    * butterfly types being determined by surrounding blocks (any butterfly if no specific blocks)
+    * drops a duplicate when bonemealed
+
+Menial Tasks:
+    * change biome colors of araucaria forest (water and leaf)
+    * some crafting recipes
+    * new ginkgo leaf texture
+
+ /==============================================================\
+<==================  POTENTIAL  FUTURE  PLANS  ==================>
+ \==============================================================/
+
+Fynbos Biome:
+    * Coastal Biome
+    * many colored flowers (spreads/drops when bonemealed) (all dyes available)
+    * Heather Ground Covering (slab like block that you sink into)
+    * Maybe something with wildfires (not the one from the mob vote)
+    * sundew?
+
+Marshlands/Wetlands Biome:
+    * low mist
+    * stilted villages
+    * Small mangrove like trees
+    * sundew
+    * Frog: color?
+    * wet moss: waterlogged moss you sink into
+
+Two layer jungle?
+    * jungle with columns and trees that make an extra surface
+
+Other?
+    * Aldrovanda vesiculosa
+    * cattails?
+    * Underground forest
