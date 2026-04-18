@@ -19,7 +19,6 @@ public class FullBlockClimbable {
             int Y = Mth.floor((int)entityBoundingBox.minY);
             int maxX = Mth.floor(entityBoundingBox.maxX+ 0.125);
             int maxZ = Mth.floor(entityBoundingBox.maxZ+ 0.125);
-
             for (int X = minX; X <= maxX; X++){
                 for (int Z = minZ; Z <= maxZ; Z++){
                     if (level.getBlockState(new BlockPos(X, Y, Z)).is(PhytochorionTags.CLIMBABLE_FULL_BLOCK)){
