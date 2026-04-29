@@ -16,7 +16,6 @@ Ginkgo Forest:
     * ginkgo ground litter
 
 Ghost Pipe:
-    * https://www.youtube.com/watch?v=UVJ6CmwtFi4&list=PLKGarocXCE1H9Y21-pxjt5Pt8bW14twa-&index=40
     * generate in dark oak (and pale garden) and structures in ginkgo (maybe potted in araucaria witch structure)
     * can be crafted into black dye
     * damaged texture
@@ -54,6 +53,9 @@ Marshlands/Wetlands Biome:
     * sundew
     * Frog: color?
     * wet moss: waterlogged moss you sink into
+    * points od interest, small structure with a bit of loot or a trader of some sort
+    * lygtemænd (nordic will o' wisp) that imitate said points of interest with light, leading you into a trap.
+      if you take of your armor or drop an emerald while there is one it instead leads you somewhere beneficial
 
 Two layer jungle?
     * jungle with columns and trees that make an extra surface

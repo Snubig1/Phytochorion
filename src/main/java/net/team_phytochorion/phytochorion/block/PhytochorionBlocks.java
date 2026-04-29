@@ -109,6 +109,13 @@ public class PhytochorionBlocks {
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
+        FlowerPotBlock flowerPotBlock = (FlowerPotBlock) Blocks.FLOWER_POT;
+        flowerPotBlock.addPlant(ARAUCARIA_SAPLING.getId(), POTTED_ARAUCARIA_SAPLING);
+        flowerPotBlock.addPlant(BUTTERFLY_WEED.getId(), POTTED_BUTTERFLY_WEED);
+        flowerPotBlock.addPlant(GHOST_PIPE.getId(), POTTED_GHOST_PIPE);
+        flowerPotBlock.addPlant(RED_GHOST_PIPE.getId(), POTTED_RED_GHOST_PIPE);
+        flowerPotBlock.addPlant(PINE_SAPLING.getId(), POTTED_PINE_SAPLING);
+        flowerPotBlock.addPlant(GINKGO_SAPLING.getId(), POTTED_GINKGO_SAPLING);
     }
 
     private static FlowerPotBlock flowerPot(Block pContent, FeatureFlag... pRequiredFeatures) {
@@ -117,7 +124,7 @@ public class PhytochorionBlocks {
              blockbehaviour$properties = blockbehaviour$properties.requiredFeatures(pRequiredFeatures);
         }
         final BlockBehaviour.Properties properties = blockbehaviour$properties;
-        return new FlowerPotBlock(null, () -> pContent, properties);
+        return new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, () -> pContent, properties);
     }
 
     private static RotatedPillarBlock log(BlockState pStrippedBlock ,MapColor pTopMapColor, MapColor pSideMapColor) {
