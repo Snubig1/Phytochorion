@@ -53,7 +53,7 @@ Marshlands/Wetlands Biome:
     * sundew
     * Frog: color?
     * wet moss: waterlogged moss you sink into
-    * points od interest, small structure with a bit of loot or a trader of some sort
+    * points of interest, small structure with a bit of loot or a trader of some sort
     * lygtemænd (nordic will o' wisp) that imitate said points of interest with light, leading you into a trap.
       if you take of your armor or drop an emerald while there is one it instead leads you somewhere beneficial
 

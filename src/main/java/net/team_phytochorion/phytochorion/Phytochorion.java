@@ -48,7 +48,7 @@ public class Phytochorion
         PhytochorionTrunkPlacers.register(modEventBus);
         PhytochorionFoliagePlacers.register(modEventBus);
         PhytochorionItems.register(modEventBus);
-
+        var test = this;
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
@@ -86,4 +86,10 @@ public class Phytochorion
             Sheets.addWoodType(PhytochorionWoodTypes.GINKGO);
         }
     }
+    /*
+    @SubscribeEvent
+    public void heal(LivingHealEvent event) {
+        event.setCanceled(true);
+        System.out.println("Healed (or did you)");
+    }*/
 }
