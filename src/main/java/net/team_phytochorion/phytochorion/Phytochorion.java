@@ -2,8 +2,10 @@ package net.team_phytochorion.phytochorion;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -48,7 +50,6 @@ public class Phytochorion
         PhytochorionTrunkPlacers.register(modEventBus);
         PhytochorionFoliagePlacers.register(modEventBus);
         PhytochorionItems.register(modEventBus);
-        var test = this;
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
@@ -86,10 +87,12 @@ public class Phytochorion
             Sheets.addWoodType(PhytochorionWoodTypes.GINKGO);
         }
     }
-    /*
+
     @SubscribeEvent
     public void heal(LivingHealEvent event) {
-        event.setCanceled(true);
-        System.out.println("Healed (or did you)");
-    }*/
+        if (event.getEntity().hasEffect(MobEffects.BLINDNESS)) {
+            event.setCanceled(true);
+            System.out.println("Healed (or did you)");
+        }
+    }
 }

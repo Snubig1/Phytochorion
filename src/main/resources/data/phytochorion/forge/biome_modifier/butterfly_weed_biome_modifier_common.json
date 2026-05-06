@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:flower_forest",
+    "minecraft:cherry_grove"
+  ],
+  "features": "phytochorion:butterfly_weed_patch_common",
+  "step": "vegetal_decoration"
+}

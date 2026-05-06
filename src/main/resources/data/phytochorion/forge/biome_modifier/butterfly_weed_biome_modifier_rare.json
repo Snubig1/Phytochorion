@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:plains",
+    "minecraft:sunflower_plains"
+  ],
+  "features": "phytochorion:butterfly_weed_patch_rare",
+  "step": "vegetal_decoration"
+}
