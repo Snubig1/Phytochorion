@@ -21,7 +21,6 @@ Ghost Pipe:
     * damaged texture
     * Anti Growing Area
     * potion effect brewed from dried ghost pipe (dried on a campfire), disables regaining health for a few moments (maybe by rapidly draining it afterwards).
-    * spreads when bonemealed
 
 Butterfly Weed:
     * can be crafted into orange dye
