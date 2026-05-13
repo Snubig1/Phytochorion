@@ -4,23 +4,21 @@ package net.team_phytochorion.phytochorion.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.stats.Stats;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-
-import javax.annotation.Nullable;
 
 public class GhostPipe extends FlowerBlock implements BonemealableBlock {
     public GhostPipe() {
@@ -28,12 +26,17 @@ public class GhostPipe extends FlowerBlock implements BonemealableBlock {
     }
 
     @Override
-    public void playerDestroy(Level pLevel, Player pPlayer, BlockPos pPos, BlockState pState, @Nullable BlockEntity pBlockEntity, ItemStack pTool) {
-        pPlayer.awardStat(Stats.BLOCK_MINED.get(this));
-        pPlayer.causeFoodExhaustion(0.005F);
+    public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
         pLevel.setBlock(pPos, this.defaultBlockState(), 3);
-        //Forge: Don't drop xp as part of the resources as it is handled by the patches in ServerPlayerGameMode#destroyBlock
-        dropResources(pState, pLevel, pPos, pBlockEntity, pPlayer, pTool, false);
+
+    }
+
+    @Override
+    public void playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+        this.spawnDestroyParticles(pLevel, pPlayer, pPos, pState);
+        if (!pLevel.isClientSide) ((ServerPlayer) pPlayer).gameMode.;
+
+        pLevel.gameEvent(GameEvent.BLOCK_DESTROY, pPos, GameEvent.Context.of(pPlayer, pState));
     }
 
     public boolean isValidBonemealTarget(LevelReader pLevelReader, BlockPos pPos, BlockState pBlockState, boolean pIsClientside) {
@@ -43,6 +46,7 @@ public class GhostPipe extends FlowerBlock implements BonemealableBlock {
         return true;
     }
     public void performBonemeal(ServerLevel pServerLevel, RandomSource pRandomSource, BlockPos pPos, BlockState pBlockState) {
+        this.properties.destroyTime(-1f);
         for (Direction direction: Direction.Plane.HORIZONTAL.shuffledCopy(pRandomSource)) {
             BlockPos positionToPlace = pPos.relative(direction, 1);
             if (pServerLevel.isEmptyBlock(positionToPlace) && this.canSurvive(this.defaultBlockState(), pServerLevel, positionToPlace)) {
