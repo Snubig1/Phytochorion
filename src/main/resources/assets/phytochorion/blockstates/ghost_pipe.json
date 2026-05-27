@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "damaged=false": {
       "model": "phytochorion:block/ghost_pipe"
+    },
+    "damaged=true": {
+      "model": "phytochorion:block/damaged_ghost_pipe"
     }
   }
 }

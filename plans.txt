@@ -18,7 +18,6 @@ Ginkgo Forest:
 Ghost Pipe:
     * generate in (pale garden) and structures in ginkgo (maybe potted in araucaria witch structure)
     * can be crafted into black dye
-    * damaged texture
     * Anti Growing Area
     * potion effect brewed from dried ghost pipe (dried on a campfire), disables regaining health for a few moments (maybe by rapidly draining it afterwards).
 
@@ -28,6 +27,7 @@ Butterfly Weed:
     * butterfly types being determined by surrounding blocks (any butterfly if no specific blocks)
 
 Menial Tasks:
+    * update damaged ghost pipe texture
     * change biome colors of araucaria forest (water and leaf)
     * some crafting recipes
     * new ginkgo leaf texture
