@@ -25,9 +25,10 @@ Butterfly Weed:
     * butterfly types being determined by surrounding blocks (any butterfly if no specific blocks)
 
 Menial Tasks:
+    * boats
+    * recipe unlocks
     * update damaged ghost pipe texture
     * change biome colors of araucaria forest (water and leaf)
-    * some crafting recipes
     * new ginkgo leaf texture
 
  /==============================================================\
