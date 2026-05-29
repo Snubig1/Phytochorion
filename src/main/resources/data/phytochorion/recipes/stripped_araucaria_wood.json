@@ -4,7 +4,7 @@
   "group": "bark",
   "key": {
     "#": {
-      "item": "phytochorion:ginkgo_log"
+      "item": "phytochorion:stripped_araucaria_log"
     }
   },
   "pattern": [
@@ -13,7 +13,7 @@
   ],
   "result": {
     "count": 3,
-    "item": "phytochorion:ginkgo_wood"
+    "item": "phytochorion:stripped_araucaria_wood"
   },
   "show_notification": true
 }

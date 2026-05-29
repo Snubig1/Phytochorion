@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden_button",
   "ingredients": [
     {
       "item": "phytochorion:araucaria_planks"
     }
   ],
   "result": {
-    "item": "phytochorion:araucaria_button",
-    "count": 1
+    "item": "phytochorion:araucaria_button"
   }
 }

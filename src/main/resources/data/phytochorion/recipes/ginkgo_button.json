@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden_button",
   "ingredients": [
     {
       "item": "phytochorion:ginkgo_planks"
     }
   ],
   "result": {
-    "item": "phytochorion:ginkgo_button",
-    "count": 1
+    "item": "phytochorion:ginkgo_button"
   }
 }

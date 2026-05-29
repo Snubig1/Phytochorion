@@ -1,19 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "bark",
+  "group": "wooden_slab",
   "key": {
     "#": {
-      "item": "phytochorion:ginkgo_log"
+      "item": "phytochorion:araucaria_planks"
     }
   },
   "pattern": [
-    "##",
-    "##"
+    "###"
   ],
   "result": {
-    "count": 3,
-    "item": "phytochorion:ginkgo_wood"
+    "count": 6,
+    "item": "phytochorion:araucaria_slab"
   },
   "show_notification": true
 }

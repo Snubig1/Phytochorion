@@ -1,12 +1,14 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
   "ingredients": [
     {
       "tag": "phytochorion:araucaria_logs"
     }
   ],
   "result": {
-    "item": "phytochorion:araucaria_planks",
-    "count": 4
+    "count": 4,
+    "item": "phytochorion:araucaria_planks"
   }
 }

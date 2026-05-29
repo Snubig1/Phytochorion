@@ -1,19 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "bark",
+  "group": "wooden_stairs",
   "key": {
     "#": {
-      "item": "phytochorion:ginkgo_log"
+      "item": "phytochorion:ginkgo_planks"
     }
   },
   "pattern": [
-    "##",
-    "##"
+    "#  ",
+    "## ",
+    "###"
   ],
   "result": {
-    "count": 3,
-    "item": "phytochorion:ginkgo_wood"
+    "count": 4,
+    "item": "phytochorion:ginkgo_stairs"
   },
   "show_notification": true
 }
