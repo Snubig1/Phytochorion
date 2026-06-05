@@ -31,7 +31,6 @@ public class PhytochorionBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Phytochorion.MOD_ID);
     public static final RegistryObject<Block> ARAUCARIA_PLANKS = registerBlock("araucaria_planks", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_CYAN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
-    //try to make climbable
     public static final RegistryObject<Block> ARAUCARIA_BRANCHES = registerBlock("araucaria_branches", AraucariaBranchesBlock::new);
     public static final RegistryObject<Block> ARAUCARIA_BUTTON = registerBlock("araucaria_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
     public static final RegistryObject<Block> ARAUCARIA_DOOR = registerBlock("araucaria_door", () -> new DoorBlock(BlockBehaviour.Properties.of().mapColor(ARAUCARIA_PLANKS.get().defaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY), BlockSetType.OAK));

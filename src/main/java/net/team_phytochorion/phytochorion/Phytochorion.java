@@ -15,6 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.team_phytochorion.phytochorion.block.entity.PhytochorionBlockEntities;
+import net.team_phytochorion.phytochorion.effect.PhytochorionMobEffects;
 import net.team_phytochorion.phytochorion.items.PhytochorionItems;
 import net.team_phytochorion.phytochorion.misc.PhytochorionBurnables;
 import net.team_phytochorion.phytochorion.misc.PhytochorionCreativeModeTabs;
@@ -45,6 +46,7 @@ public class Phytochorion
         modEventBus.addListener(this::commonSetup);
         PhytochorionCreativeModeTabs.register(modEventBus);
         PhytochorionBlocks.register(modEventBus);
+        PhytochorionMobEffects.register(modEventBus);
         PhytochorionBlockEntities.register(modEventBus);
         PhytochorionFeatures.register(modEventBus);
         PhytochorionTrunkPlacers.register(modEventBus);

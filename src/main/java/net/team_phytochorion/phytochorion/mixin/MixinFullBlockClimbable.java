@@ -22,7 +22,7 @@ public abstract class MixinFullBlockClimbable extends Entity {
         super(pEntityType, pLevel);
     }
 
-    @ModifyVariable(method = "onClimbable", at = @At("STORE"))
+    @ModifyVariable(method = "onClimbable", at = @At("STORE"), name = "ladderPos")
     public Optional<BlockPos> onClimbable(Optional<BlockPos> ladderPos)
     {
         LivingEntity thisEntity = (LivingEntity)(Object)this;

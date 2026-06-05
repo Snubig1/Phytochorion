@@ -5,7 +5,8 @@
   "refmap": "phytochorion.refmap.json",
   "minVersion": "0.8.5",
   "mixins": [
-    "MixinFullBlockClimbable"
+    "MixinFullBlockClimbable",
+    "MixinSappedGui"
 
   ]
 }
