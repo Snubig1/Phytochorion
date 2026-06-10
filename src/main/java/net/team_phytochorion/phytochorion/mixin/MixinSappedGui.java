@@ -14,15 +14,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Gui.class)
 public class MixinSappedGui {
 
-    @Inject(method = "renderHearts", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/Gui;renderHeart(Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/client/gui/Gui$HeartType;IIIZZ)V", ordinal = 0, shift = At.Shift.AFTER))
+    @Inject(method = "renderHearts", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/Gui;renderHeart(Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/client/gui/Gui$HeartType;IIIZZ)V", ordinal = 3, shift = At.Shift.AFTER))
     protected void renderHearts(GuiGraphics pGuiGraphics, Player pPlayer, int pX, int pY, int pHeight, int pOffsetHeartIndex, float pMaxHealth, int pCurrentHealth, int pDisplayHealth, int pAbsorptionAmount, boolean pRenderHighlight, CallbackInfo ci, @Local(name = "i") int i, @Local(name = "l1") int l1, @Local(name = "i2") int i2)
     {
         //this.renderHeart(pGuiGraphics, Gui.HeartType.FROZEN, l1, i2, i, pRenderHighlight, false);
     }
-    @Inject(method = "renderHeart", at = @At(value = "HEAD"))
+    @Inject(method = "renderHeart", at = @At(value = "LABEL"))
     private void renderHeart(GuiGraphics pGuiGraphics, Gui.HeartType pHeartType, int pX, int pY, int pYOffset, boolean pRenderHighlight, boolean pHalfHeart, CallbackInfo ci)
     {
-        //pGuiGraphics.blit(GUI_ICONS_LOCATION, 50, 50, 0, 0, 250, 250);
+        pGuiGraphics.blit(GUI_ICONS_LOCATION, 50, 50, 0, 0, 250, 250);
 
     }
 

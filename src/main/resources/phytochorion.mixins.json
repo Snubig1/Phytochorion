@@ -8,5 +8,10 @@
     "MixinFullBlockClimbable",
     "MixinSappedGui"
 
-  ]
+  ],
+  "injectors": {
+    "injectionPoints": [
+      "net.team_phytochorion.phytochorion.mixin.points.BeforeLabel"
+    ]
+  }
 }
