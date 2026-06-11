@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.InsnList;
+import org.objectweb.asm.tree.LineNumberNode;
 import org.spongepowered.asm.mixin.injection.InjectionPoint;
 import org.spongepowered.asm.mixin.injection.InjectionPoint.AtCode;
 import org.spongepowered.asm.mixin.injection.struct.InjectionPointData;
@@ -33,11 +34,18 @@ public class BeforeLabel extends InjectionPoint {
 
     @Override
     public boolean find(String desc, InsnList insns, Collection<AbstractInsnNode> nodes) {
-        System.out.println(insns.getFirst());
-        System.out.println(insns.get(0));
+        System.out.println(((LineNumberNode)insns.get(1)).line);
         System.out.println(insns.get(1));
-        System.out.println(insns.get(2));
         System.out.println(insns.size());
+        System.out.println(insns);
+        for (int i = 0; i < insns.size(); i++ )
+        {
+            System.out.println(insns.get(i));
+            if (insns.get(i).getType() == AbstractInsnNode.LINE) {
+                System.out.println(((LineNumberNode) insns.get(i)).line);
+                System.out.println("-------------------------------");
+            }
+        }
         System.out.println("=========================================");
         System.out.println("=========================================");
         System.out.println("=========================================");
