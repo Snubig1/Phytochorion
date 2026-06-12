@@ -2,7 +2,6 @@ package net.team_phytochorion.phytochorion;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
@@ -92,7 +91,7 @@ public class Phytochorion
 
     @SubscribeEvent
     public void heal(LivingHealEvent event) {
-        if (event.getEntity().hasEffect(MobEffects.BLINDNESS)) {
+        if (event.getEntity().hasEffect(PhytochorionMobEffects.SAPPED.get())) {
             event.setCanceled(true);
             System.out.println("Healed (or did you)");
         }
