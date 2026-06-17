@@ -7,7 +7,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.team_phytochorion.phytochorion.effect.PhytochorionMobEffects;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -28,9 +27,7 @@ public class MixinSappedGui {
         }
     }
 
-@Unique
-private static final ResourceLocation PHYTOCHORION_GUI_ICONS_LOCATION = ResourceLocation.fromNamespaceAndPath("phytochorion", "textures/gui/icons.png");
-@Shadow
-private void renderHeart(GuiGraphics pGuiGraphics, Gui.HeartType pHeartType, int pX, int pY, int pYOffset, boolean pRenderHighlight, boolean pHalfHeart) {}
+    @Unique
+    private static final ResourceLocation PHYTOCHORION_GUI_ICONS_LOCATION = ResourceLocation.fromNamespaceAndPath("phytochorion", "textures/gui/icons.png");
 
 }

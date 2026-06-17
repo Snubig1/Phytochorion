@@ -10,17 +10,7 @@ import org.spongepowered.asm.mixin.injection.InjectionPoint;
 import org.spongepowered.asm.mixin.injection.InjectionPoint.AtCode;
 import org.spongepowered.asm.mixin.injection.struct.InjectionPointData;
 
-/**
- * <p>This injection point simply returns the first instruction in the target
- * method body, allowing the injection to be placed at the "head" of the target
- * method. It accepts no parameters and only returns a single insn in all
- * circumstances.</p>
- *
- * <p>Example:</p>
- * <blockquote><pre>
- *   &#064;At("LABEL")</pre>
- * </blockquote>
- */
+
 @AtCode("LOOP")
 public class EndOfLoop extends InjectionPoint {
 
@@ -45,10 +35,7 @@ public class EndOfLoop extends InjectionPoint {
                 else
                 {
                     nodes.add(insns.get(i));
-                    System.out.println(currentLineNr);
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~");
                 }
-
             }
         }
         return true;
