@@ -12,7 +12,8 @@
   ],
   "injectors": {
     "injectionPoints": [
-      "net.team_phytochorion.phytochorion.mixin.points.EndOfLoop"
+      "net.team_phytochorion.phytochorion.mixin.points.EndOfLoop",
+      "net.team_phytochorion.phytochorion.mixin.points.StartOfLoop"
     ]
   }
 }

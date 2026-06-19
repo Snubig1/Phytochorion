@@ -15,8 +15,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Gui.class)
 public class MixinSappedGui {
 
-    @Inject(method = "renderHearts", at = @At(value = "LOOP"))
-    protected void renderHearts(GuiGraphics pGuiGraphics, Player pPlayer, int pX, int pY, int pHeight, int pOffsetHeartIndex, float pMaxHealth, int pCurrentHealth, int pDisplayHealth, int pAbsorptionAmount, boolean pRenderHighlight, CallbackInfo ci, @Local(name = "l1") int l1, @Local(name = "i2") int i2, @Local(name = "j2") int j2, @Local(name = "flag") boolean flag)
+    @Inject(method = "renderHearts", at = @At(value = "END_LOOP"))
+    protected void addSappedHearts(GuiGraphics pGuiGraphics, Player pPlayer, int pX, int pY, int pHeight, int pOffsetHeartIndex, float pMaxHealth, int pCurrentHealth, int pDisplayHealth, int pAbsorptionAmount, boolean pRenderHighlight, CallbackInfo ci, @Local(name = "l1") int l1, @Local(name = "i2") int i2, @Local(name = "j2") int j2, @Local(name = "flag") boolean flag)
     {
         if (pPlayer.hasEffect(PhytochorionMobEffects.SAPPED.get())){
             if (!flag && pCurrentHealth <= j2) {
@@ -24,6 +24,15 @@ public class MixinSappedGui {
             } else if (pCurrentHealth - 1 == j2) {
                 pGuiGraphics.blit(PHYTOCHORION_GUI_ICONS_LOCATION, l1, i2, 9, 0, 9, 9);
             }
+        }
+    }
+
+    @Inject(method = "renderHearts", at = @At(value = "START_LOOP", shift = At.Shift.BY, by = 5))
+    protected void stopRegenBounce(GuiGraphics pGuiGraphics, Player pPlayer, int pX, int pY, int pHeight, int pOffsetHeartIndex, float pMaxHealth, int pCurrentHealth, int pDisplayHealth, int pAbsorptionAmount, boolean pRenderHighlight, CallbackInfo ci, @Local(name = "i1") int i1, @Local(name = "i2") int i2, @Local(name = "j") int j)
+    {
+        System.out.println("test");
+        if (pPlayer.hasEffect(PhytochorionMobEffects.SAPPED.get()) && i1 > (pDisplayHealth/2) && i1 == pOffsetHeartIndex) {
+            i2 += 2;
         }
     }
 

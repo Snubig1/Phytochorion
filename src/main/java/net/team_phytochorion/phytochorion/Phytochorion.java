@@ -16,9 +16,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.team_phytochorion.phytochorion.block.entity.PhytochorionBlockEntities;
 import net.team_phytochorion.phytochorion.effect.PhytochorionMobEffects;
 import net.team_phytochorion.phytochorion.items.PhytochorionItems;
-import net.team_phytochorion.phytochorion.misc.PhytochorionBurnables;
-import net.team_phytochorion.phytochorion.misc.PhytochorionCreativeModeTabs;
-import net.team_phytochorion.phytochorion.misc.PhytochorionWoodTypes;
+import net.team_phytochorion.phytochorion.misc.*;
 import net.team_phytochorion.phytochorion.world.feature.PhytochorionFeatures;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionFoliagePlacers;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
@@ -51,6 +49,7 @@ public class Phytochorion
         PhytochorionTrunkPlacers.register(modEventBus);
         PhytochorionFoliagePlacers.register(modEventBus);
         PhytochorionItems.register(modEventBus);
+        PhytochorionPotions.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
@@ -65,6 +64,7 @@ public class Phytochorion
             Regions.register(new PhytochorionRegion(fromNamespaceAndPath(MOD_ID, "overworld"), 1));
             SurfaceRuleManager.addToDefaultSurfaceRulesAtStage(SurfaceRuleManager.RuleCategory.OVERWORLD, SurfaceRuleManager.RuleStage.AFTER_BEDROCK,0, PhytochorionSurfaceRuleData.makeRules());
             PhytochorionBurnables.AddBurnables();
+            PhytochorionPotionBrewing.addRecipes();
             System.out.println("test");
         });
     }
@@ -93,7 +93,6 @@ public class Phytochorion
     public void heal(LivingHealEvent event) {
         if (event.getEntity().hasEffect(PhytochorionMobEffects.SAPPED.get())) {
             event.setCanceled(true);
-            System.out.println("Healed (or did you)");
         }
     }
 }

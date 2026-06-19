@@ -19,7 +19,7 @@ Ghost Pipe:
     * generate in (pale garden) and structures in ginkgo (maybe potted in araucaria witch structure)
     * Anti Growing Area
     * sapped effects regen animation and queue when you should have healed
-    * potion (+ recipe: dried ghost pipe in regen potion) for sapped effect
+    * dried ghost pipe
 
 Butterfly Weed:
     * Custom Data Driven Butterfly Particles

@@ -50,6 +50,14 @@
 
 
   "effect.phytochorion.sapped": "Sapped",
+  "item.minecraft.potion.effect.sapping": "Potion of Sapping",
+  "item.minecraft.potion.effect.long_sapping": "Potion of Sapping",
+  "item.minecraft.splash_potion.effect.sapping": "Splash Potion of Sapping",
+  "item.minecraft.splash_potion.effect.long_sapping": "Splash Potion of Sapping",
+  "item.minecraft.lingering_potion.effect.sapping": "Lingering Potion of Sapping",
+  "item.minecraft.lingering_potion.effect.long_sapping": "Lingering Potion of Sapping",
+  "item.minecraft.tipped_arrow.effect.sapping": "Arrow of Sapping",
+  "item.minecraft.tipped_arrow.effect.long_sapping": "Arrow of Sapping",
 
 
   "block.phytochorion.reinforced_glass_panes": "Reinforced Glass Panes",

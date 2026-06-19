@@ -1,8 +1,5 @@
 package net.team_phytochorion.phytochorion.mixin.points;
 
-import java.util.Collection;
-import java.util.HashMap;
-
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.InsnList;
 import org.objectweb.asm.tree.LineNumberNode;
@@ -10,11 +7,14 @@ import org.spongepowered.asm.mixin.injection.InjectionPoint;
 import org.spongepowered.asm.mixin.injection.InjectionPoint.AtCode;
 import org.spongepowered.asm.mixin.injection.struct.InjectionPointData;
 
+import java.util.Collection;
+import java.util.HashMap;
 
-@AtCode("END_LOOP")
-public class EndOfLoop extends InjectionPoint {
 
-    public EndOfLoop(InjectionPointData data) {
+@AtCode("START_LOOP")
+public class StartOfLoop extends InjectionPoint {
+
+    public StartOfLoop(InjectionPointData data) {
         super(data);
     }
 
@@ -25,16 +25,18 @@ public class EndOfLoop extends InjectionPoint {
 
     @Override
     public boolean find(String desc, InsnList insns, Collection<AbstractInsnNode> nodes) {
-        HashMap<Integer, LineNumberNode> foundLineNrs = new HashMap<>();
+        HashMap<Integer, Integer> foundLineNrs = new HashMap<>();
         for (int i = 0; i < insns.size(); i++ )
         {
             if (insns.get(i).getType() == AbstractInsnNode.LINE) {
                 int currentLineNr = ((LineNumberNode)insns.get(i)).line;
                 if (!foundLineNrs.containsKey(currentLineNr))
-                    foundLineNrs.put(currentLineNr, ((LineNumberNode)insns.get(i)));
+                    foundLineNrs.put(currentLineNr, i);
                 else
                 {
-                    nodes.add(insns.get(i));
+                    System.out.println("=========================================================");
+                    System.out.println(insns.get(foundLineNrs.get(currentLineNr)));
+                    nodes.add(insns.get(foundLineNrs.get(currentLineNr)));
                 }
             }
         }
