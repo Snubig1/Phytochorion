@@ -1,6 +1,7 @@
 package net.team_phytochorion.phytochorion.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
@@ -27,13 +28,15 @@ public class MixinSappedGui {
         }
     }
 
-    @Inject(method = "renderHearts", at = @At(value = "START_LOOP", shift = At.Shift.BY, by = 5))
-    protected void stopRegenBounce(GuiGraphics pGuiGraphics, Player pPlayer, int pX, int pY, int pHeight, int pOffsetHeartIndex, float pMaxHealth, int pCurrentHealth, int pDisplayHealth, int pAbsorptionAmount, boolean pRenderHighlight, CallbackInfo ci, @Local(name = "i1") int i1, @Local(name = "i2") int i2, @Local(name = "j") int j)
+    @Inject(method = "renderHearts", at = @At(value = "START_LOOP", shift = At.Shift.BY, by = -5))
+    protected void stopRegenBounce(GuiGraphics pGuiGraphics, Player pPlayer, int pX, int pY, int pHeight, int pOffsetHeartIndex, float pMaxHealth, int pCurrentHealth, int pDisplayHealth, int pAbsorptionAmount, boolean pRenderHighlight, CallbackInfo ci, @Local(index = 17) int i1)
     {
         System.out.println("test");
-        if (pPlayer.hasEffect(PhytochorionMobEffects.SAPPED.get()) && i1 > (pDisplayHealth/2) && i1 == pOffsetHeartIndex) {
-            i2 += 2;
-        }
+        System.out.println(i1);
+        //i2.set(10);
+        //if (pPlayer.hasEffect(PhytochorionMobEffects.SAPPED.get()) && i1 > (pDisplayHealth/2) && i1 == pOffsetHeartIndex) {
+        //    i2.set(i2.get() + 2);
+        //}
     }
 
     @Unique
