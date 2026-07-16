@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "phytochorion:ginkgo_log",
-    "phytochorion:ginkgo_wood"
+    "phytochorion:stripped_ginkgo_log",
+    "phytochorion:ginkgo_wood",
+    "phytochorion:stripped_ginkgo_wood"
   ]
 }
