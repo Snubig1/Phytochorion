@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "phytochorion:araucaria_trapdoor"
+    "phytochorion:araucaria_trapdoor",
+    "phytochorion:ginkgo_trapdoor"
   ]
 }
