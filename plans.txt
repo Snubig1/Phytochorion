@@ -27,8 +27,6 @@ Butterfly Weed:
 
 Menial Tasks:
     * boats
-    * recipe unlocks
-    * update damaged ghost pipe texture
     * change biome colors of araucaria forest (water and leaf)
     * new ginkgo leaf texture
 
