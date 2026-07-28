@@ -27,7 +27,6 @@ Butterfly Weed:
 
 Menial Tasks:
     * boats
-    * change biome colors of araucaria forest (leaf)
     * new ginkgo leaf texture
 
  /==============================================================\
