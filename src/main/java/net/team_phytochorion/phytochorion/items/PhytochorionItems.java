@@ -19,6 +19,8 @@ public class PhytochorionItems {
     public static final RegistryObject<Item> GINKGO_SIGN = ITEMS.register("ginkgo_sign", () -> new SignItem(new Item.Properties().stacksTo(16), PhytochorionBlocks.GINKGO_SIGN.get(), PhytochorionBlocks.GINKGO_WALL_SIGN.get()));
     public static final RegistryObject<Item> GINKGO_HANGING_SIGN = ITEMS.register("ginkgo_hanging_sign", () -> new HangingSignItem(PhytochorionBlocks.GINKGO_HANGING_SIGN.get(), PhytochorionBlocks.GINKGO_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
+    public static final RegistryObject<Item> DRIED_GHOST_PIPE = ITEMS.register("dried_ghost_pipe", () -> new Item(new Item.Properties()));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

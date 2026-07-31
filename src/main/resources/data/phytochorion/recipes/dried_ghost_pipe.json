@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "misc",
+  "ingredient": {
+    "tag": "phytochorion:ghost_pipe"
+  },
+  "result": "phytochorion:dried_ghost_pipe",
+  "cookingtime": 2400
+}
