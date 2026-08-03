@@ -11,6 +11,7 @@ Ginkgo Forest:
     * increased pig spawns
     * Ginkgo tree: big and small
     * ruins
+    * areas with lanterns in the trees
     * potential graveyard structure
     * decently lush/bright colors
     * ginkgo ground litter

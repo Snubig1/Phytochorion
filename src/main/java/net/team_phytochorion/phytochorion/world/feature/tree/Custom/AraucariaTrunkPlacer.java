@@ -55,9 +55,7 @@ public class AraucariaTrunkPlacer extends TrunkPlacer {
         }
 
 
-
         setDirtAt(level, biConsumer, random, basePos.below(), treeConfiguration);
-
 
 
         for(int i = 0; i < treeHeight; ++i) {
