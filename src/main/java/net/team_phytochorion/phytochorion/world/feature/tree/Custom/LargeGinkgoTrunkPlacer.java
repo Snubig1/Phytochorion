@@ -15,6 +15,8 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.BiConsumer;
 
@@ -38,6 +40,8 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
     @Override
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
         BlockPos blockpos = pPos.below();
+        int branchedHeight = pFreeTreeHeight - this.branchFreeHeight.sample(pRandom);
+        int branchAmount = branchedHeight + pRandom.nextInt(-1, 2);
 
         setDirtAt(pLevel, pBlockSetter, pRandom, blockpos, pConfig);
         setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.east(), pConfig);
@@ -51,16 +55,80 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
             this.placeLogIfFree(pLevel, pBlockSetter, pRandom, pPos.offset(0, i, 1).mutable(), pConfig);
         }
         this.placeLogIfFree(pLevel, pBlockSetter, pRandom, pPos.offset(0, pFreeTreeHeight, 0).mutable(), pConfig);
-        return computeFoliageAttachements(pPos);
+        return computeFoliageAttachments(pPos, pRandom, branchedHeight, branchAmount);
     }
 
-    public List<FoliagePlacer.FoliageAttachment> computeFoliageAttachements(BlockPos pPos){
-        List<FoliagePlacer.FoliageAttachment> list = Lists.newArrayList();
+    public List<FoliagePlacer.FoliageAttachment> computeFoliageAttachments(BlockPos pPos, RandomSource pRandom, int pBranchedHeight, int pBranchAmount){
+        FoliagePlacer.FoliageAttachment[][] attachments = new FoliagePlacer.FoliageAttachment[8][pBranchedHeight];
 
-        list.add(new FoliagePlacer.FoliageAttachment(pPos.offset(2, 5, 2), 0, false));
+        int regionBranchAmount = pBranchAmount / 4;
+        int regionBranchRemainder = pBranchAmount % 4;
+        int north = regionBranchAmount;
+        int east = regionBranchAmount;
+        int south = regionBranchAmount;
+        int west = regionBranchAmount;
+
+        switch (regionBranchRemainder ){
+            case 1:
+                north += 1;
+                break;
+            case 2:
+                north += 1;
+                south += 1;
+                break;
+            case 3:
+                north += 1;
+                south += 1;
+                east += 1;
+                break;
+        }
+
+        for (int i = 0; i < north; i++)
+        {
+            int x = (pRandom.nextInt(4) + 7) % 8;
+            int y = (pRandom.nextInt(pBranchedHeight));
+            System.out.println(x);
+            System.out.println(y);
+            System.out.println("---");
+        }
+
+        for (int i = 0; i < east; i++)
+        {
+            int x = (pRandom.nextInt(4) + 1);
+            int y = (pRandom.nextInt(pBranchedHeight));
+            System.out.println(x);
+            System.out.println(y);
+            System.out.println("---");
+        }
+
+        for (int i = 0; i < south; i++)
+        {
+            int x = pRandom.nextInt(4) + 3;
+            int y = (pRandom.nextInt(pBranchedHeight));
+            System.out.println(x);
+            System.out.println(y);
+            System.out.println("---");
+        }
+
+        for (int i = 0; i < west; i++)
+        {
+            int x = (pRandom.nextInt(4) + 5) % 8;
+            int y = (pRandom.nextInt(pBranchedHeight));
+            System.out.println(x);
+            System.out.println(y);
+            System.out.println("---");
+        }
 
 
-        return list;
+
+        //attachments[2][2] = new FoliagePlacer.FoliageAttachment(pPos.offset(2, 5, 2), 0, false);
+        List<FoliagePlacer.FoliageAttachment> returnList = Lists.newArrayList();
+        for (FoliagePlacer.FoliageAttachment[] row : attachments)
+        {
+            returnList.addAll(Arrays.stream(row).toList());
+        }
+        returnList.removeAll(Collections.singleton(null));
+        return returnList;
     }
 
     @Override

@@ -12,6 +12,6 @@ public class GinkgoTreeGrower extends AbstractMegaTreeGrower {
         return TreeFeatures.OAK;
     }
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource p_255637_) {
-        return TreeFeatures.DARK_OAK;
+        return PhytochorionConfiguredFeatures.LARGE_GINKGO;
     }
 }
