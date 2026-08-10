@@ -6,6 +6,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.Tuple;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
@@ -16,7 +17,6 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.function.BiConsumer;
 
@@ -54,12 +54,14 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
             this.placeLogIfFree(pLevel, pBlockSetter, pRandom, pPos.offset(1, i, 1).mutable(), pConfig);
             this.placeLogIfFree(pLevel, pBlockSetter, pRandom, pPos.offset(0, i, 1).mutable(), pConfig);
         }
-        this.placeLogIfFree(pLevel, pBlockSetter, pRandom, pPos.offset(0, pFreeTreeHeight, 0).mutable(), pConfig);
-        return computeFoliageAttachments(pPos, pRandom, branchedHeight, branchAmount);
+        this.placeLogIfFree(pLevel, pBlockSetter, pRandom, pPos.above(pFreeTreeHeight).mutable(), pConfig);
+        return computeFoliageAttachments(pPos.above(pFreeTreeHeight-1), pRandom, branchedHeight, branchAmount);
     }
 
-    public List<FoliagePlacer.FoliageAttachment> computeFoliageAttachments(BlockPos pPos, RandomSource pRandom, int pBranchedHeight, int pBranchAmount){
-        FoliagePlacer.FoliageAttachment[][] attachments = new FoliagePlacer.FoliageAttachment[8][pBranchedHeight];
+
+    private List<FoliagePlacer.FoliageAttachment> computeFoliageAttachments(BlockPos pPos, RandomSource pRandom, int pBranchedHeight, int pBranchAmount){
+        boolean[][] attachmentMap = new boolean[8][pBranchedHeight];
+        List<FoliagePlacer.FoliageAttachment> returnList = Lists.newArrayList();
 
         int regionBranchAmount = pBranchAmount / 4;
         int regionBranchRemainder = pBranchAmount % 4;
@@ -83,21 +85,18 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
                 break;
         }
 
-        for (int i = 0; i < north; i++)
-        {
-            int x = (pRandom.nextInt(4) + 7) % 8;
-            int y = (pRandom.nextInt(pBranchedHeight));
-            System.out.println(x);
-            System.out.println(y);
-            System.out.println("---");
-        }
 
         for (int i = 0; i < east; i++)
         {
             int x = (pRandom.nextInt(4) + 1);
             int y = (pRandom.nextInt(pBranchedHeight));
+
+            attachmentMap[x][y] = true;
+
             System.out.println(x);
             System.out.println(y);
+            System.out.println(getBrancCoords(pPos, new Tuple<>(x, y)));
+            returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), 0, false));
             System.out.println("---");
         }
 
@@ -105,8 +104,13 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
         {
             int x = pRandom.nextInt(4) + 3;
             int y = (pRandom.nextInt(pBranchedHeight));
+
+            attachmentMap[x][y] = true;
+
             System.out.println(x);
             System.out.println(y);
+            System.out.println(getBrancCoords(pPos, new Tuple<>(x, y)));
+            returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), 0, false));
             System.out.println("---");
         }
 
@@ -114,21 +118,41 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
         {
             int x = (pRandom.nextInt(4) + 5) % 8;
             int y = (pRandom.nextInt(pBranchedHeight));
+
+            attachmentMap[x][y] = true;
+
             System.out.println(x);
             System.out.println(y);
+            System.out.println(getBrancCoords(pPos, new Tuple<>(x, y)));
+            returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), 0, false));
             System.out.println("---");
         }
 
-
-
-        //attachments[2][2] = new FoliagePlacer.FoliageAttachment(pPos.offset(2, 5, 2), 0, false);
-        List<FoliagePlacer.FoliageAttachment> returnList = Lists.newArrayList();
-        for (FoliagePlacer.FoliageAttachment[] row : attachments)
+        for (int i = 0; i < north; i++)
         {
-            returnList.addAll(Arrays.stream(row).toList());
+            int x = (pRandom.nextInt(4) + 7) % 8;
+            int y = (pRandom.nextInt(pBranchedHeight));
+
+            attachmentMap[x][y] = true;
+
+            System.out.println(x);
+            System.out.println(y);
+            System.out.println(getBrancCoords(pPos, new Tuple<>(x, y)));
+            returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), 0, false));
+            System.out.println("---");
         }
-        returnList.removeAll(Collections.singleton(null));
+
+        for (boolean[] list : attachmentMap) {
+            System.out.println(Arrays.toString(list));
+        }
+
         return returnList;
+
+    }
+    int[] coordOffset = {-1, -1, 0, 1, 2, 2, 1, 0};
+    private BlockPos getBrancCoords(BlockPos pBasePos, Tuple<Integer, Integer> pFlatCoords)
+    {
+        return pBasePos.offset( coordOffset[7 - pFlatCoords.getA()], -pFlatCoords.getB(), coordOffset[pFlatCoords.getA()]);
     }
 
     @Override
