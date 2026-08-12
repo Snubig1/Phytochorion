@@ -26,6 +26,7 @@ Butterfly Weed:
     * butterfly types being determined by surrounding blocks (any butterfly if no specific blocks)
 
 Menial Tasks:
+    * araucaria ground covering working in single biome worlds
     * boats
     * new ginkgo leaf texture
 

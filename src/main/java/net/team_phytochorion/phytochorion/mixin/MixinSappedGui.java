@@ -1,7 +1,6 @@
 package net.team_phytochorion.phytochorion.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
