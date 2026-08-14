@@ -16,6 +16,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
 
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;
@@ -65,106 +66,44 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
 
         int regionBranchAmount = pBranchAmount / 4;
         int regionBranchRemainder = pBranchAmount % 4;
-        int north = regionBranchAmount;
-        int east = regionBranchAmount;
-        int south = regionBranchAmount;
-        int west = regionBranchAmount;
+
+        Tuple<Integer, Integer>[] regions = new Tuple[] {new Tuple<>(1, regionBranchAmount), new Tuple<>(3, regionBranchAmount), new Tuple<>(5, regionBranchAmount), new Tuple<>(7, regionBranchAmount) };
 
         switch (regionBranchRemainder ){
             case 1:
-                north += 1;
+                regions[0].setB(regionBranchAmount+1);
                 break;
             case 2:
-                north += 1;
-                south += 1;
+                regions[0].setB(regionBranchAmount+1);
+                regions[1].setB(regionBranchAmount+1);
                 break;
             case 3:
-                north += 1;
-                south += 1;
-                east += 1;
+                regions[0].setB(regionBranchAmount+1);
+                regions[1].setB(regionBranchAmount+1);
+                regions[2].setB(regionBranchAmount+1);
                 break;
         }
 
-        for (boolean[] list : attachmentMap) {
-            System.out.println(Arrays.toString(list));
-        }
-
-
-        for (int i = 0; i < east; i++)
+        for (Tuple<Integer, Integer> region : regions)
         {
-            int x = (pRandom.nextInt(4) + 1);
-            int y = (pRandom.nextInt(pBranchedHeight));
+            for (int i = 0; i < region.getB(); i++)
+            {
+                int x = (pRandom.nextInt(4) + region.getA()) % 8;
+                int y = pRandom.nextInt(pBranchedHeight);
 
-            System.out.println(x);
-            System.out.println(y);
+                if (attachmentMap[x][y])
+                    {
 
-            attachmentMap[x][y] = true;
-            attachmentMap[x][(y+1) % 8] = true;
-            attachmentMap[x][(y+7) % 8] = true;
-            System.out.println("step1");
-            attachmentMap[Math.min(x+1, pBranchedHeight-1)][y] = true;
-            attachmentMap[Math.max(x-1, 0)][y] = true;
-            System.out.println("step2");
+                    }
 
-            System.out.println(x);
-            System.out.println(y);
-            System.out.println(getBrancCoords(pPos, new Tuple<>(x, y)));
-            returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), 0, false));
-            System.out.println("---");
-        }
+                attachmentMap[x][y] = true;
+                attachmentMap[(x+1) % 8][y] = true;
+                attachmentMap[(x+7) % 8][y] = true;
+                attachmentMap[x][Math.min(y+1, pBranchedHeight-1)] = true;
+                attachmentMap[x][Math.max(y-1, 0)] = true;
 
-        for (int i = 0; i < south; i++)
-        {
-            int x = pRandom.nextInt(4) + 3;
-            int y = (pRandom.nextInt(pBranchedHeight));
-
-            attachmentMap[x][y] = true;
-            attachmentMap[x][(y+1) % 8] = true;
-            attachmentMap[x][(y+7) % 8] = true;
-            attachmentMap[Math.min(x+1, pBranchedHeight-1)][y] = true;
-            attachmentMap[Math.max(x-1, 0)][y] = true;
-
-            System.out.println(x);
-            System.out.println(y);
-            System.out.println(getBrancCoords(pPos, new Tuple<>(x, y)));
-            returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), 0, false));
-            System.out.println("---");
-        }
-
-        for (int i = 0; i < west; i++)
-        {
-            int x = (pRandom.nextInt(4) + 5) % 8;
-            int y = (pRandom.nextInt(pBranchedHeight));
-
-            attachmentMap[x][y] = true;
-            attachmentMap[x][(y+1) % 8] = true;
-            attachmentMap[x][(y+7) % 8] = true;
-            attachmentMap[Math.min(x+1, pBranchedHeight-1)][y] = true;
-            attachmentMap[Math.max(x-1, 0)][y] = true;
-
-            System.out.println(x);
-            System.out.println(y);
-            System.out.println(getBrancCoords(pPos, new Tuple<>(x, y)));
-            returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), 0, false));
-            System.out.println("---");
-        }
-
-        for (int i = 0; i < north; i++)
-        {
-            int x = (pRandom.nextInt(4) + 7) % 8;
-            int y = (pRandom.nextInt(pBranchedHeight));
-
-            attachmentMap[x][y] = true;
-            attachmentMap[x][(y+1) % 8] = true;
-            attachmentMap[x][(y+7) % 8] = true;
-            attachmentMap[Math.min(x+1, pBranchedHeight-1)][y] = true;
-            attachmentMap[Math.max(x-1, 0)][y] = true;
-
-            System.out.println(x);
-            System.out.println(y);
-            System.out.println(getBrancCoords(pPos, new Tuple<>(x, y)));
-            returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), 0, false));
-            System.out.println("---");
+                returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), 0, false));
+            }
         }
 
         for (boolean[] list : attachmentMap) {
