@@ -85,17 +85,26 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
                 break;
         }
 
+        for (boolean[] list : attachmentMap) {
+            System.out.println(Arrays.toString(list));
+        }
+
 
         for (int i = 0; i < east; i++)
         {
             int x = (pRandom.nextInt(4) + 1);
             int y = (pRandom.nextInt(pBranchedHeight));
 
+            System.out.println(x);
+            System.out.println(y);
+
             attachmentMap[x][y] = true;
             attachmentMap[x][(y+1) % 8] = true;
             attachmentMap[x][(y+7) % 8] = true;
-            attachmentMap[Math.max(x+1, pBranchedHeight-1)][y] = true;
-            attachmentMap[Math.min(x-1, 0)][y] = true;
+            System.out.println("step1");
+            attachmentMap[Math.min(x+1, pBranchedHeight-1)][y] = true;
+            attachmentMap[Math.max(x-1, 0)][y] = true;
+            System.out.println("step2");
 
             System.out.println(x);
             System.out.println(y);
@@ -112,8 +121,8 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
             attachmentMap[x][y] = true;
             attachmentMap[x][(y+1) % 8] = true;
             attachmentMap[x][(y+7) % 8] = true;
-            attachmentMap[Math.max(x+1, pBranchedHeight-1)][y] = true;
-            attachmentMap[Math.min(x-1, 0)][y] = true;
+            attachmentMap[Math.min(x+1, pBranchedHeight-1)][y] = true;
+            attachmentMap[Math.max(x-1, 0)][y] = true;
 
             System.out.println(x);
             System.out.println(y);
@@ -130,8 +139,8 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
             attachmentMap[x][y] = true;
             attachmentMap[x][(y+1) % 8] = true;
             attachmentMap[x][(y+7) % 8] = true;
-            attachmentMap[Math.max(x+1, pBranchedHeight-1)][y] = true;
-            attachmentMap[Math.min(x-1, 0)][y] = true;
+            attachmentMap[Math.min(x+1, pBranchedHeight-1)][y] = true;
+            attachmentMap[Math.max(x-1, 0)][y] = true;
 
             System.out.println(x);
             System.out.println(y);
@@ -148,8 +157,8 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
             attachmentMap[x][y] = true;
             attachmentMap[x][(y+1) % 8] = true;
             attachmentMap[x][(y+7) % 8] = true;
-            attachmentMap[Math.max(x+1, pBranchedHeight-1)][y] = true;
-            attachmentMap[Math.min(x-1, 0)][y] = true;
+            attachmentMap[Math.min(x+1, pBranchedHeight-1)][y] = true;
+            attachmentMap[Math.max(x-1, 0)][y] = true;
 
             System.out.println(x);
             System.out.println(y);
