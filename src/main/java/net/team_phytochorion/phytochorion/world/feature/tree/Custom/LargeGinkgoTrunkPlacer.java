@@ -15,7 +15,6 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
-import org.joml.Vector2i;
 
 
 import java.util.Arrays;
@@ -60,7 +59,7 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
         return computeFoliageAttachments(pPos.above(pFreeTreeHeight-1), pRandom, branchedHeight, branchAmount);
     }
 
-
+    int[] regionCoordOffset = {0, -1, 0, 1};
     private List<FoliagePlacer.FoliageAttachment> computeFoliageAttachments(BlockPos pPos, RandomSource pRandom, int pBranchedHeight, int pBranchAmount){
         boolean[][] attachmentMap = new boolean[8][pBranchedHeight];
         List<FoliagePlacer.FoliageAttachment> returnList = Lists.newArrayList();
@@ -94,12 +93,22 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
 
                 if (attachmentMap[x][y])
                     {
-                        for (int r = 0; r <= 4; r++)
+                        boolean foundGood = false;
+                        for (int r = 0; r < 4; r++)
                         {
-                            if (!attachmentMap[x][y])
+                            if (!attachmentMap[(x + regionCoordOffset[r] + 7) % 8][(y + regionCoordOffset[3 - r] + pBranchedHeight-1) % (pBranchedHeight-1)])
                             {
+                                foundGood = true;
+                                x = (x + regionCoordOffset[r] + 7) % 8;
+                                y = (y + regionCoordOffset[3 - r] + pBranchedHeight-1) % (pBranchedHeight-1);
                                 break;
                             }
+                        }
+                        if (!foundGood) {
+                            System.out.println("nothing good at");
+                            System.out.println(x);
+                            System.out.println(y);
+                            continue;
                         }
                     }
 

@@ -16,8 +16,8 @@ public class AraucariaFoliagePlacer extends FoliagePlacer {
     public static final Codec<AraucariaFoliagePlacer> CODEC = RecordCodecBuilder.create((placer) ->
             foliagePlacerParts(placer).apply(placer, AraucariaFoliagePlacer::new));
 
-    public AraucariaFoliagePlacer(IntProvider p_161411_, IntProvider p_161412_) {
-        super(p_161411_, p_161412_);
+    public AraucariaFoliagePlacer(IntProvider pRadius, IntProvider pOffset) {
+        super(pRadius, pOffset);
     }
 
     @Override
