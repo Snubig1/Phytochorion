@@ -15,6 +15,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
+import org.joml.Vector2i;
 
 
 import java.util.Arrays;
@@ -93,7 +94,13 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
 
                 if (attachmentMap[x][y])
                     {
-
+                        for (int r = 0; r <= 4; r++)
+                        {
+                            if (!attachmentMap[x][y])
+                            {
+                                break;
+                            }
+                        }
                     }
 
                 attachmentMap[x][y] = true;
