@@ -2,6 +2,7 @@ package net.team_phytochorion.phytochorion.world.feature.tree.Custom;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
@@ -21,9 +22,29 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
     @Override
     protected FoliagePlacerType<?> type() {return PhytochorionFoliagePlacers.GINKGO_FOLIAGE_PLACER.get();}
 
+    static Direction[] directionMap = {Direction.NORTH,Direction.EAST, Direction.SOUTH, Direction.WEST};
+
     @Override
     protected void createFoliage(LevelSimulatedReader pLevel, FoliageSetter pBlockSetter, RandomSource pRandom, TreeConfiguration pConfig, int pMaxFreeTreeHeight, FoliageAttachment pAttachment, int pFoliageHeight, int pFoliageRadius, int pOffset) {
         tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos());
+
+        int branchLen = 0;
+
+        boolean topBranch = pAttachment.radiusOffset() >= 10;
+
+        Direction direction = directionMap[(pAttachment.radiusOffset() - (topBranch? 10: 0))/2];
+        System.out.println(direction);
+        System.out.println((pAttachment.radiusOffset() - (topBranch? 10: 0))/2);
+        System.out.println(pAttachment.pos());
+        if (topBranch) branchLen =  pRandom.nextInt(2, 4);
+        else branchLen =  pRandom.nextInt(3, 6);
+
+        for (int currentBranchLen = 0; currentBranchLen < branchLen; currentBranchLen++)
+        {
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().relative(direction, currentBranchLen));
+        }
+
+
     }
 
     @Override

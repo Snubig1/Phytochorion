@@ -118,7 +118,7 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
                 attachmentMap[x][Math.min(y+1, pBranchedHeight-1)] = true;
                 attachmentMap[x][Math.max(y-1, 0)] = true;
 
-                returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), 0, false));
+                returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), x + (y == 0? 10 : 0), true));
             }
         }
 
@@ -129,7 +129,7 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
         return returnList;
 
     }
-    int[] coordOffset = {-1, -1, 0, 1, 2, 2, 1, 0};
+    static int[] coordOffset = {-1, -1, 0, 1, 2, 2, 1, 0};
     private BlockPos getBrancCoords(BlockPos pBasePos, Tuple<Integer, Integer> pFlatCoords)
     {
         return pBasePos.offset( coordOffset[7 - pFlatCoords.getA()], -pFlatCoords.getB(), coordOffset[pFlatCoords.getA()]);

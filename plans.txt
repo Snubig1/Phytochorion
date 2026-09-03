@@ -29,6 +29,7 @@ Menial Tasks:
     * araucaria ground covering working in single biome worlds
     * boats
     * new ginkgo leaf texture
+    * funny ingots
 
  /==============================================================\
 <==================  POTENTIAL  FUTURE  PLANS  ==================>
