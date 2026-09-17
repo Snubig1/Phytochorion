@@ -56,6 +56,11 @@ Marshlands/Wetlands Biome:
 Two layer jungle?
     * jungle with columns and trees that make an extra surface
 
+Night Dark Seas:
+    * always dark as night
+    * ghosts only seen through their reflections in the water
+    * glowy particles in the darkness
+
 Other?
     * Aldrovanda vesiculosa
     * cattails?

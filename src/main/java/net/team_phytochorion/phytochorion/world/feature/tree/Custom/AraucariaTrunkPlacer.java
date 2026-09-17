@@ -102,7 +102,7 @@ public class AraucariaTrunkPlacer extends TrunkPlacer {
         BlockState branchBlock = BlockStateProvider.simple(PhytochorionBlocks.ARAUCARIA_BRANCHES.get()).getState(random, position);
         for(int i = 0; i < branchLength; i++)
         {
-            PlaceBlock(biConsumer, position.relative(direction,i+1).relative(direction.getClockWise(),Math.round((i+1)*directionOffsetH)), branchBlock.setValue(RotatedPillarBlock.AXIS, direction.getAxis()));
+            PlaceBlock(biConsumer, position.relative(direction,i+1).relative(direction.getClockWise(),Math.round((i+1)*directionOffsetH)), branchBlock.trySetValue(RotatedPillarBlock.AXIS, direction.getAxis()));
         }
         return new Tuple<>(position.relative(direction,branchLength+crownExtendedBy).relative(direction.getClockWise(),Math.round(branchLength*directionOffsetH)), direction);
 
