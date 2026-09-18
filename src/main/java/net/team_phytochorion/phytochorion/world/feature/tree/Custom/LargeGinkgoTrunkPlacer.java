@@ -42,7 +42,7 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
         BlockPos blockpos = pPos.below();
         int branchedHeight = pFreeTreeHeight - this.branchFreeHeight.sample(pRandom);
-        int branchAmount = branchedHeight + pRandom.nextInt(-1, 2);
+        int branchAmount = branchedHeight + pRandom.nextInt(1, 5);
 
         setDirtAt(pLevel, pBlockSetter, pRandom, blockpos, pConfig);
         setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.east(), pConfig);

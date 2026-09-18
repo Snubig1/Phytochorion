@@ -49,12 +49,30 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
         BlockPos currentPos;
         int offsetAngle = pRandom.nextInt(-1, 3);
         int offsetCumulative = offsetAngle;
-        placeLog(pLevel, pBlockSetter, pAttachment.pos(), pConfig.trunkProvider.getState(pRandom, pAttachment.pos()), direction);
-        for (int currentBranchProgress = 1; currentBranchProgress < branchLen; currentBranchProgress++)
+        float veritacalOffsetAngle = MapRandomFloat(pRandom.nextFloat(), -0.45F, 0.65F);
+        for (int currentBranchProgress = 0; currentBranchProgress < branchLen; currentBranchProgress++)
         {
-            currentPos = pAttachment.pos().relative(direction, currentBranchProgress).relative(direction.getClockWise(), handedness * (offsetCumulative/2));
+            currentPos = pAttachment.pos().above((int)(veritacalOffsetAngle * (currentBranchProgress+1))).relative(direction, currentBranchProgress).relative(direction.getClockWise(), handedness * (offsetCumulative/2));
 
             if (placeLog(pLevel, pBlockSetter, currentPos, pConfig.trunkProvider.getState(pRandom, pAttachment.pos()), direction)) {
+                tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.above());
+                tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction.getClockWise(),-1));
+                tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction.getClockWise(),1));
+                if (currentBranchProgress > 0) {
+                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction.getClockWise(), -2));
+                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction.getClockWise(), 2));
+                }
+                else tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, -1));
+                if (currentBranchProgress == branchLen-1) {
+                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 1));
+                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 2));
+                    if (pRandom.nextBoolean()) tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 3));
+                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 1).relative(direction.getClockWise(), 1));
+                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 1).relative(direction.getClockWise(), -1));
+                    if (pRandom.nextBoolean()) tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 2).relative(direction.getClockWise(), 1));
+                    if (pRandom.nextBoolean()) tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 2).relative(direction.getClockWise(), -1));
+                }
+
 
             }else break;
             offsetAngle = Math.max(-1 ,Math.min(2 ,offsetAngle + pRandom.nextInt(-1, 2)));
@@ -70,6 +88,10 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
     @Override
     protected boolean shouldSkipLocation(RandomSource pRandom, int pLocalX, int pLocalY, int pLocalZ, int pRange, boolean pLarge) {
         return false;
+    }
+
+    private float MapRandomFloat(float value, float bound_1, float bound_2){
+        return value * (bound_2 - bound_1) + bound_1;
     }
 
     private boolean placeLog(LevelSimulatedReader pLevel, FoliageSetter pBlockSetter, BlockPos pPos, BlockState pBlock, Direction pDirection){
