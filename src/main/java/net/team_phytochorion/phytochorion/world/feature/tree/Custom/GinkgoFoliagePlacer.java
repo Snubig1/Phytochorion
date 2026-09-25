@@ -37,6 +37,13 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
     protected void createFoliage(LevelSimulatedReader pLevel, FoliageSetter pBlockSetter, RandomSource pRandom, TreeConfiguration pConfig, int pMaxFreeTreeHeight, FoliageAttachment pAttachment, int pFoliageHeight, int pFoliageRadius, int pOffset) {
         int branchLen;
 
+        if (pAttachment.radiusOffset() == 100)
+        {
+
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().above());
+            return;
+        }
+
         boolean topBranch = pAttachment.radiusOffset() >= 10;
 
         int horisontalPos = pAttachment.radiusOffset() - (topBranch ? 10 : 0);

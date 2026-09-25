@@ -67,6 +67,8 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
         int regionBranchAmount = pBranchAmount / 4;
         int regionBranchRemainder = pBranchAmount % 4;
 
+        returnList.add(new FoliagePlacer.FoliageAttachment(pPos.above(), 100, true));
+
         Tuple<Integer, Integer>[] regions = new Tuple[] {new Tuple<>(1, regionBranchAmount), new Tuple<>(3, regionBranchAmount), new Tuple<>(5, regionBranchAmount), new Tuple<>(7, regionBranchAmount) };
 
         switch (regionBranchRemainder ){

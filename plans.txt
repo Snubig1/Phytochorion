@@ -9,7 +9,9 @@ Araucaria Forest:
 
 Ginkgo Forest:
     * increased pig spawns
+    * golden rabbits
     * Ginkgo tree: big and small
+      Leaf tops are a shape refer to "LOOK AT THIS.png" to see the exact shape, with additional diagonal (up towards center) lines of length 1..3 overlayed on top
     * ruins
     * areas with lanterns in the trees
     * potential graveyard structure
