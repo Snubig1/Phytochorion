@@ -2,10 +2,16 @@ package net.team_phytochorion.phytochorion;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.BasicItemListing;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.event.village.VillagerTradesEvent;
+import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -94,5 +100,18 @@ public class Phytochorion
         if (event.getEntity().hasEffect(PhytochorionMobEffects.SAPPED.get())) {
             event.setCanceled(true);
         }
+    }
+
+    @SubscribeEvent
+    public void wandererTrades(WandererTradesEvent event) {
+        event.getGenericTrades().add(new BasicItemListing(1, new ItemStack(PhytochorionBlocks.GHOST_PIPE.get(), 1), 8, 0));
+        event.getGenericTrades().add(new BasicItemListing(1, new ItemStack(PhytochorionBlocks.BUTTERFLY_WEED.get(), 1), 8, 0));
+        event.getGenericTrades().add(new BasicItemListing(5, new ItemStack(PhytochorionBlocks.GINKGO_SAPLING.get(), 1), 8, 0));
+        event.getGenericTrades().add(new BasicItemListing(5, new ItemStack(PhytochorionBlocks.ARAUCARIA_SAPLING.get(), 1), 8, 0));
+
+    }
+    @SubscribeEvent
+    public void villagerTrades(VillagerTradesEvent event) {
+        if (event.getType() == VillagerProfession.CLERIC) event.getTrades().get(2).add(new BasicItemListing(new ItemStack(PhytochorionItems.DRIED_GHOST_PIPE.get(), 6), new ItemStack(Items.EMERALD, 1), 12, 20, 1));
     }
 }

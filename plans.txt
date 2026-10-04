@@ -32,10 +32,9 @@ Menial Tasks:
     * boats
     * new ginkgo leaf texture
     * funny ingots
-    * wandy T selling new saplings, logs, and flowers
-    * cleric buys dried ghost pipe
-    * fix araucaria breaking bedrock
-    * splashtexts
+    * fix araucaria breaking bedrock    * splashtexts
+    * field guide integration
+    * add items to vanilla creative tabs
 
  /==============================================================\
 <==================  POTENTIAL  FUTURE  PLANS  ==================>
