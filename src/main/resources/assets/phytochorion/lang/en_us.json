@@ -1,4 +1,6 @@
 {
+  "item.phytochorion.araucaria_boat": "Araucaria Boat",
+  "item.phytochorion.araucaria_chest_boat": "Araucaria Boat with Chest",
   "block.phytochorion.araucaria_branches": "Araucaria Branches",
   "block.phytochorion.araucaria_button": "Araucaria Button",
   "block.phytochorion.araucaria_door": "Araucaria Door",
@@ -19,6 +21,8 @@
   "block.phytochorion.araucaria_trapdoor": "Araucaria Trapdoor",
   "block.phytochorion.araucaria_wood": "Araucaria Wood",
 
+  "item.phytochorion.ginkgo_boat": "Ginkgo Boat",
+  "item.phytochorion.ginkgo_chest_boat": "Ginkgo Boat with Chest",
   "block.phytochorion.ginkgo_button": "Ginkgo Button",
   "block.phytochorion.ginkgo_door": "Ginkgo Door",
   "block.phytochorion.ginkgo_fence": "Ginkgo Fence",
@@ -59,6 +63,12 @@
   "item.minecraft.lingering_potion.effect.long_sapping": "Lingering Potion of Sapping",
   "item.minecraft.tipped_arrow.effect.sapping": "Arrow of Sapping",
   "item.minecraft.tipped_arrow.effect.long_sapping": "Arrow of Sapping",
+
+
+
+
+  "entity.phytochorion.phytochorion_boat": "Boat",
+  "entity.phytochorion.phytochorion_chest_boat": "Boat with Chest",
 
 
   "block.phytochorion.reinforced_glass_panes": "Reinforced Glass Panes",

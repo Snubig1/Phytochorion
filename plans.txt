@@ -29,10 +29,10 @@ Butterfly Weed:
 
 Menial Tasks:
     * araucaria ground covering working in single biome worlds
-    * boats
     * new ginkgo leaf texture
     * funny ingots
-    * fix araucaria breaking bedrock    * splashtexts
+    * fix araucaria breaking bedrock
+    * splashtexts
     * field guide integration
     * add items to vanilla creative tabs
 

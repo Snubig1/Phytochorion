@@ -2,6 +2,7 @@ package net.team_phytochorion.phytochorion;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -21,6 +22,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.team_phytochorion.phytochorion.block.entity.PhytochorionBlockEntities;
 import net.team_phytochorion.phytochorion.effect.PhytochorionMobEffects;
+import net.team_phytochorion.phytochorion.entity.PhytochorionEntities;
+import net.team_phytochorion.phytochorion.entity.client.PhytochorionBoatRenderer;
 import net.team_phytochorion.phytochorion.items.PhytochorionItems;
 import net.team_phytochorion.phytochorion.misc.*;
 import net.team_phytochorion.phytochorion.world.feature.PhytochorionFeatures;
@@ -49,6 +52,7 @@ public class Phytochorion
         modEventBus.addListener(this::commonSetup);
         PhytochorionCreativeModeTabs.register(modEventBus);
         PhytochorionBlocks.register(modEventBus);
+        PhytochorionEntities.register(modEventBus);
         PhytochorionMobEffects.register(modEventBus);
         PhytochorionBlockEntities.register(modEventBus);
         PhytochorionFeatures.register(modEventBus);
@@ -92,6 +96,9 @@ public class Phytochorion
         {
             Sheets.addWoodType(PhytochorionWoodTypes.ARAUCARIA);
             Sheets.addWoodType(PhytochorionWoodTypes.GINKGO);
+
+            EntityRenderers.register(PhytochorionEntities.PHYTOCHORION_BOAT.get(), pContext -> new PhytochorionBoatRenderer(pContext, false));
+            EntityRenderers.register(PhytochorionEntities.PHYTOCHORION_CHEST_BOAT.get(), pContext -> new PhytochorionBoatRenderer(pContext, true));
         }
     }
 

@@ -52,7 +52,10 @@ public class PhytochorionCreativeModeTabs {
                         pOutput.accept(PhytochorionItems.GINKGO_SIGN.get());
                         pOutput.accept(PhytochorionItems.GINKGO_HANGING_SIGN.get());
 
-
+                        pOutput.accept(PhytochorionItems.ARAUCARIA_BOAT.get());
+                        pOutput.accept(PhytochorionItems.ARAUCARIA_CHEST_BOAT.get());
+                        pOutput.accept(PhytochorionItems.GINKGO_BOAT.get());
+                        pOutput.accept(PhytochorionItems.GINKGO_CHEST_BOAT.get());
 
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_BRANCHES.get());
                         pOutput.accept(PhytochorionBlocks.ARAUCARIA_LEAVES.get());
