@@ -1,4 +1,4 @@
-package net.team_phytochorion.phytochorion.world.feature.tree.Custom;
+package net.team_phytochorion.phytochorion.world.feature.tree.custom;
 
 
 import com.google.common.collect.Lists;
@@ -59,7 +59,7 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
         return computeFoliageAttachments(pPos.above(pFreeTreeHeight-1), pRandom, branchedHeight, branchAmount);
     }
 
-    int[] regionCoordOffset = {0, -1, 0, 1};
+    final int[] regionCoordOffset = {0, -1, 0, 1};
     private List<FoliagePlacer.FoliageAttachment> computeFoliageAttachments(BlockPos pPos, RandomSource pRandom, int pBranchedHeight, int pBranchAmount){
         boolean[][] attachmentMap = new boolean[8][pBranchedHeight];
         List<FoliagePlacer.FoliageAttachment> returnList = Lists.newArrayList();
@@ -131,7 +131,7 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
         return returnList;
 
     }
-    static int[] coordOffset = {-1, -1, 0, 1, 2, 2, 1, 0};
+    static final int[] coordOffset = {-1, -1, 0, 1, 2, 2, 1, 0};
     private BlockPos getBrancCoords(BlockPos pBasePos, Tuple<Integer, Integer> pFlatCoords)
     {
         return pBasePos.offset( coordOffset[7 - pFlatCoords.getA()], -pFlatCoords.getB(), coordOffset[pFlatCoords.getA()]);

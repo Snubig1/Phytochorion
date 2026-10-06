@@ -7,8 +7,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.team_phytochorion.phytochorion.Phytochorion;
-import net.team_phytochorion.phytochorion.world.feature.tree.Custom.AraucariaFoliagePlacer;
-import net.team_phytochorion.phytochorion.world.feature.tree.Custom.GinkgoFoliagePlacer;
+import net.team_phytochorion.phytochorion.world.feature.tree.custom.AraucariaFoliagePlacer;
+import net.team_phytochorion.phytochorion.world.feature.tree.custom.GinkgoFoliagePlacer;
 
 public class PhytochorionFoliagePlacers {
     public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACERS = DeferredRegister.create(ForgeRegistries.FOLIAGE_PLACER_TYPES, Phytochorion.MOD_ID);

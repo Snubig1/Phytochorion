@@ -1,4 +1,4 @@
-package net.team_phytochorion.phytochorion.world.feature.tree.Custom;
+package net.team_phytochorion.phytochorion.world.feature.tree.custom;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -26,7 +26,7 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
     @Override
     protected FoliagePlacerType<?> type() {return PhytochorionFoliagePlacers.GINKGO_FOLIAGE_PLACER.get();}
 
-    static Direction[] directionMap = {
+    static final Direction[] directionMap = {
             Direction.NORTH,
             Direction.EAST,
             Direction.SOUTH,

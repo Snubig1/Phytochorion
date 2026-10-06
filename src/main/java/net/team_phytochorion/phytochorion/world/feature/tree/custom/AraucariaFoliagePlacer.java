@@ -1,4 +1,4 @@
-package net.team_phytochorion.phytochorion.world.feature.tree.Custom;
+package net.team_phytochorion.phytochorion.world.feature.tree.custom;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

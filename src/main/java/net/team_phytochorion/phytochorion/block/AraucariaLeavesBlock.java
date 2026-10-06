@@ -40,7 +40,7 @@ public class AraucariaLeavesBlock extends LeavesBlock {
         }
 
     }
-    static Vec3i[] directionArray = new Vec3i[]{
+    static final Vec3i[] directionArray = new Vec3i[]{
             new Vec3i(1,0,0),
             new Vec3i(-1,0,0),
             new Vec3i(0,1,0),

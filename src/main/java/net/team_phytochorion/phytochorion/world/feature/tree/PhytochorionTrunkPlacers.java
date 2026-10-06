@@ -6,8 +6,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.team_phytochorion.phytochorion.Phytochorion;
-import net.team_phytochorion.phytochorion.world.feature.tree.Custom.AraucariaTrunkPlacer;
-import net.team_phytochorion.phytochorion.world.feature.tree.Custom.LargeGinkgoTrunkPlacer;
+import net.team_phytochorion.phytochorion.world.feature.tree.custom.AraucariaTrunkPlacer;
+import net.team_phytochorion.phytochorion.world.feature.tree.custom.LargeGinkgoTrunkPlacer;
 
 public class PhytochorionTrunkPlacers {
     public static final DeferredRegister<TrunkPlacerType<?>> TRUNK_PLACERS = DeferredRegister.create(Registries.TRUNK_PLACER_TYPE, Phytochorion.MOD_ID);
