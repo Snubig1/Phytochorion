@@ -21,7 +21,7 @@
         "Name": "phytochorion:ginkgo_leaves",
         "Properties": {
           "distance": "7",
-          "persistent": "true",
+          "persistent": "false",
           "waterlogged": "false"
         }
       }

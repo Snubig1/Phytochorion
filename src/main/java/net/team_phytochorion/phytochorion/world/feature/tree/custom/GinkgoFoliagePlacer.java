@@ -39,8 +39,46 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
 
         if (pAttachment.radiusOffset() == 100)
         {
+            //maybe randomise this one
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(pRandom.nextInt(0,2),2, pRandom.nextInt(0,2)));
 
-            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().above());
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(0,1, 0));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(1,1, 0));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(0,1, 1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(1,1, 1));
+
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(1,0, 0));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(0,0, 1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(1,0, 1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(-1,0, 0));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(-1,0, 1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(0,0, -1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(1,0, -1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(2,0, 0));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(2,0, 1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(0,0, 2));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(1,0, 2));
+
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(-1,-1, 0));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(-1,-1, 1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(0,-1, -1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(1,-1, -1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(2,-1, 0));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(2,-1, 1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(0,-1, 2));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(1,-1, 2));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(-2,-1, 0));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(-2,-1, 1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(0,-1, -2));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(1,-1, -2));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(3,-1, 0));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(3,-1, 1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(0,-1, 3));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(1,-1, 3));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(-1,-1, -1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(2,-1, 2));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(2,-1, -1));
+            tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(-1,-1, 2));
             return;
         }
 

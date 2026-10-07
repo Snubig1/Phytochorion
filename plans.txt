@@ -11,7 +11,7 @@ Ginkgo Forest:
     * increased pig spawns
     * golden rabbits
     * Ginkgo tree: big and small
-      Leaf tops are a shape refer to "LOOK AT THIS.png" to see the exact shape, with additional diagonal (up towards center) lines of length 1..3 overlayed on top
+      Leaf tops are a shape (you should know the shape) with additional diagonal (up towards center) lines of length 1..3 overlayed on top
     * ruins
     * areas with lanterns in the trees
     * potential graveyard structure
@@ -35,6 +35,7 @@ Menial Tasks:
     * splashtexts
     * field guide integration
     * add items to vanilla creative tabs
+    * clean up event file placements
 
  /==============================================================\
 <==================  POTENTIAL  FUTURE  PLANS  ==================>
