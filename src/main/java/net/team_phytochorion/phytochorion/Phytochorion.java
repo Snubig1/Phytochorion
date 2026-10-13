@@ -72,7 +72,7 @@ public class Phytochorion
         event.enqueueWork(() ->
         {
             Regions.register(new PhytochorionRegion(fromNamespaceAndPath(MOD_ID, "overworld"), 1));
-            SurfaceRuleManager.addToDefaultSurfaceRulesAtStage(SurfaceRuleManager.RuleCategory.OVERWORLD, SurfaceRuleManager.RuleStage.AFTER_BEDROCK,0, PhytochorionSurfaceRuleData.makeRules());
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, "phytochorion", PhytochorionSurfaceRuleData.makeRules());
             PhytochorionBurnables.AddBurnables();
             PhytochorionPotionBrewing.addRecipes();
             System.out.println("test");

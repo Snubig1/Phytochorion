@@ -53,6 +53,11 @@
 
   "creativetab.phytochorion_tab": "Phytochorion",
 
+  "biome.phytochorion.araucaria_forest": "Araucaria Forest",
+  "biome.phytochorion.snowy_araucaria_forest": "Snowy Araucaria Forest",
+  "biome.phytochorion.ginkgo_forest": "Ginkgo Forest",
+  "biome.phytochorion.sparse_ginkgo_forest": "Sparse Ginkgo Forest",
+
 
   "effect.phytochorion.sapped": "Sapped",
   "item.minecraft.potion.effect.sapping": "Potion of Sapping",
