@@ -10,7 +10,6 @@ import net.team_phytochorion.phytochorion.Phytochorion;
 
 public class PhytochorionConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ARAUCARIA = getKey(Phytochorion.MOD_ID,"araucaria");
-    //public static final ResourceKey<ConfiguredFeature<?, ?>> GINKGO = getKey(Phytochorion.MOD_ID,"ginkgo");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_GINKGO = getKey(Phytochorion.MOD_ID,"large_ginkgo");
 
     private static ResourceKey<ConfiguredFeature<?, ?>> getKey(String mod_id, String name){

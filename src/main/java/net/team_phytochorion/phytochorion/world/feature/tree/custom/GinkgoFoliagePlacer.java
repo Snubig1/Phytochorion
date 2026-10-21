@@ -13,6 +13,7 @@ import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
+import net.team_phytochorion.phytochorion.block.PhytochorionBlocks;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionFoliagePlacers;
 
 public class GinkgoFoliagePlacer  extends FoliagePlacer {
@@ -75,21 +76,20 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
         for (int currentBranchProgress = 0; currentBranchProgress < branchLen; currentBranchProgress++)
         {
             currentPos = pAttachment.pos().above((int)(veritacalOffsetAngle * (currentBranchProgress+1))).relative(direction, currentBranchProgress).relative(direction.getClockWise(), handedness * (offsetCumulative/2));
-
             if (placeLog(pLevel, pBlockSetter, currentPos, pConfig.trunkProvider.getState(pRandom, pAttachment.pos()), direction)) {
                 tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.above());
-                //placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().relative(direction.getClockWise(),(currentBranchProgress > 0? -1: -2)), direction.getClockWise(), (currentBranchProgress > 0? 3: 5), 0.25f, 0.4f);
-                placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos(), direction.getClockWise(), 5, 0f, 0f);
+                placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction.getClockWise(),(currentBranchProgress > 0? -2: -1)), direction.getClockWise(), (currentBranchProgress > 0? 5: 3), 0.4f, 0.25f);
+
+
+                if ((int)(veritacalOffsetAngle*currentBranchProgress) != (int)(veritacalOffsetAngle*(currentBranchProgress-1))){
+                    pBlockSetter.set(currentPos, PhytochorionBlocks.ARAUCARIA_PLANKS.get().defaultBlockState());
+                }
 
                 if (currentBranchProgress == 0) tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, -1));
                 if (currentBranchProgress == branchLen-1) {
-                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 1));
-                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 2));
-                    if (pRandom.nextBoolean()) tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 3));
-                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 1).relative(direction.getClockWise(), 1));
-                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 1).relative(direction.getClockWise(), -1));
-                    if (pRandom.nextBoolean()) tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 2).relative(direction.getClockWise(), 1));
-                    if (pRandom.nextBoolean()) tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, 2).relative(direction.getClockWise(), -1));
+                    placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, currentPos, direction, pRandom.nextInt(3,5), 0.4f, 0.25f);
+                    placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction.getClockWise(), 1), direction, pRandom.nextInt(2,4), 0.4f, 0.25f);
+                    placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction.getClockWise(), -1), direction, pRandom.nextInt(2,4), 0.4f, 0.25f);
                 }
 
 
@@ -124,16 +124,13 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
     private void placeLeavesRow(LevelSimulatedReader pLevel, FoliagePlacer.FoliageSetter pFoliageSetter, RandomSource pRandom, TreeConfiguration pTreeConfiguration, BlockPos pPos, Direction pDirection, int pLength, float pDroopChance, float pDroopExtensionChance){
         BlockPos.MutableBlockPos mutableBlockPos = pPos.mutable();
 
-
         for (int i = 0; i < pLength; ++i){
             if (tryPlaceLeaf(pLevel, pFoliageSetter, pRandom, pTreeConfiguration, mutableBlockPos) && pRandom.nextFloat() <= pDroopChance){
-                tryPlaceLeaf(pLevel, pFoliageSetter, pRandom, pTreeConfiguration, mutableBlockPos.below());
-                if (pRandom.nextFloat() <= pDroopExtensionChance){
+                if (tryPlaceLeaf(pLevel, pFoliageSetter, pRandom, pTreeConfiguration, mutableBlockPos.below()) && pRandom.nextFloat() <= pDroopExtensionChance){
                     tryPlaceLeaf(pLevel, pFoliageSetter, pRandom, pTreeConfiguration, mutableBlockPos.below(2));
                 }
             }
             mutableBlockPos.move(pDirection);
         }
-        System.out.println(pPos);
     }
 }

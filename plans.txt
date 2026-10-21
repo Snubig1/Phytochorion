@@ -28,6 +28,7 @@ Butterfly Weed:
     * butterfly types being determined by surrounding blocks (any butterfly if no specific blocks)
 
 Menial Tasks:
+    * make araucaria needles not a flower
     * araucaria ground covering working in single biome worlds
     * new ginkgo leaf texture
     * funny ingots

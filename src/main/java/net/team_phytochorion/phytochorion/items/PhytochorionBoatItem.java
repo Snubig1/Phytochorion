@@ -52,7 +52,6 @@ public class PhytochorionBoatItem extends Item {
                     }
                 }
             }
-
             if (hitresult.getType() == HitResult.Type.BLOCK) {
                 Boat boat = this.getBoat(pLevel, hitresult);
                 if (boat instanceof PhytochorionBoatEntity phytochorionBoat) {

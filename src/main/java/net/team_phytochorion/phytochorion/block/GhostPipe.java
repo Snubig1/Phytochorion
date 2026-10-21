@@ -60,7 +60,6 @@ public class GhostPipe extends FlowerBlock implements BonemealableBlock {
         this.spawnDestroyParticles(pLevel, pPlayer, pPos, pState);
         if (!pState.getValue(DAMAGED)) {
             if (pPlayer.isLocalPlayer()) {
-                assert ((LocalPlayer) pPlayer).minecraft.gameMode != null;
                 ((LocalPlayer) pPlayer).minecraft.gameMode.destroyDelay = 5;
             }
         }
