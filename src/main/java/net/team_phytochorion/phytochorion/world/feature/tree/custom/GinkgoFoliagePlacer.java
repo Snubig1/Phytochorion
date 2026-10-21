@@ -82,7 +82,8 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
 
                 if ((offsetCumulative - offsetAngle)/2 != (offsetCumulative)/2){
                     if ((int)(veritacalOffsetAngle*currentBranchProgress) > (int)(veritacalOffsetAngle*(currentBranchProgress+1))){
-                        tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.above().relative(direction.getClockWise(), (offsetCumulative)/2 - (offsetCumulative - offsetAngle)/2));
+                        tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.above().relative(direction.getClockWise(), ((offsetCumulative - offsetAngle)/2 - offsetCumulative/2)*handedness));
+                        System.out.println("down");
                     }
                     else if ((int)(veritacalOffsetAngle*currentBranchProgress) < (int)(veritacalOffsetAngle*(currentBranchProgress+1))){
                         tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, -1));

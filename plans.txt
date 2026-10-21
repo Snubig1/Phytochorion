@@ -28,7 +28,7 @@ Butterfly Weed:
     * butterfly types being determined by surrounding blocks (any butterfly if no specific blocks)
 
 Menial Tasks:
-    * clean up extra leaves on diagonal ginkgo brach code also fix it not working correctly when going down
+    * clean up extra leaves on diagonal ginkgo brach code
     * make araucaria needles not a flower
     * araucaria ground covering working in single biome worlds
     * new ginkgo leaf texture

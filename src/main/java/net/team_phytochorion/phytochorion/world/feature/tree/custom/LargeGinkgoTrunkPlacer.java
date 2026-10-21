@@ -107,9 +107,6 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
                             }
                         }
                         if (!foundGood) {
-                            System.out.println("nothing good at");
-                            System.out.println(x);
-                            System.out.println(y);
                             continue;
                         }
                     }
@@ -122,10 +119,6 @@ public class LargeGinkgoTrunkPlacer extends GiantTrunkPlacer {
 
                 returnList.add(new FoliagePlacer.FoliageAttachment(getBrancCoords(pPos, new Tuple<>(x, y)), x + (y == 0? 10 : 0), true));
             }
-        }
-
-        for (boolean[] list : attachmentMap) {
-            System.out.println(Arrays.toString(list));
         }
 
         return returnList;
