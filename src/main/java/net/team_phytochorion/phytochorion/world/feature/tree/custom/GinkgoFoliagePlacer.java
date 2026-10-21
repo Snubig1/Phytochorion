@@ -13,7 +13,6 @@ import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
-import net.team_phytochorion.phytochorion.block.PhytochorionBlocks;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionFoliagePlacers;
 
 public class GinkgoFoliagePlacer  extends FoliagePlacer {
@@ -81,9 +80,16 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
                 placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction.getClockWise(),(currentBranchProgress > 0? -2: -1)), direction.getClockWise(), (currentBranchProgress > 0? 5: 3), 0.4f, 0.25f);
 
 
-                if ((int)(veritacalOffsetAngle*currentBranchProgress) != (int)(veritacalOffsetAngle*(currentBranchProgress-1))){
-                    pBlockSetter.set(currentPos, PhytochorionBlocks.ARAUCARIA_PLANKS.get().defaultBlockState());
+                if ((offsetCumulative - offsetAngle)/2 != (offsetCumulative)/2){
+                    if ((int)(veritacalOffsetAngle*currentBranchProgress) > (int)(veritacalOffsetAngle*(currentBranchProgress+1))){
+                        tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.above().relative(direction.getClockWise(), (offsetCumulative)/2 - (offsetCumulative - offsetAngle)/2));
+                    }
+                    else if ((int)(veritacalOffsetAngle*currentBranchProgress) < (int)(veritacalOffsetAngle*(currentBranchProgress+1))){
+                        tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, -1));
+
+                    }
                 }
+
 
                 if (currentBranchProgress == 0) tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, -1));
                 if (currentBranchProgress == branchLen-1) {
