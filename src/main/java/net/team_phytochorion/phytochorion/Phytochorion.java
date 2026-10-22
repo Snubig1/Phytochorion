@@ -7,6 +7,7 @@ import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.BasicItemListing;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
@@ -26,6 +27,8 @@ import net.team_phytochorion.phytochorion.entity.PhytochorionEntities;
 import net.team_phytochorion.phytochorion.entity.client.PhytochorionBoatRenderer;
 import net.team_phytochorion.phytochorion.items.PhytochorionItems;
 import net.team_phytochorion.phytochorion.misc.*;
+import net.team_phytochorion.phytochorion.particle.ButterflyParticles;
+import net.team_phytochorion.phytochorion.particle.PhytochorionParticles;
 import net.team_phytochorion.phytochorion.world.feature.PhytochorionFeatures;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionFoliagePlacers;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionTrunkPlacers;
@@ -59,6 +62,7 @@ public class Phytochorion
         PhytochorionTrunkPlacers.register(modEventBus);
         PhytochorionFoliagePlacers.register(modEventBus);
         PhytochorionItems.register(modEventBus);
+        PhytochorionParticles.register(modEventBus);
         PhytochorionPotions.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -99,6 +103,12 @@ public class Phytochorion
 
             EntityRenderers.register(PhytochorionEntities.PHYTOCHORION_BOAT.get(), pContext -> new PhytochorionBoatRenderer(pContext, false));
             EntityRenderers.register(PhytochorionEntities.PHYTOCHORION_CHEST_BOAT.get(), pContext -> new PhytochorionBoatRenderer(pContext, true));
+        }
+
+        @SubscribeEvent
+        public static void registerParticleProvider(RegisterParticleProvidersEvent event)
+        {
+            event.registerSpriteSet(PhytochorionParticles.BUTERFLY_PARTICLES.get(), ButterflyParticles.Provider::new);
         }
     }
 

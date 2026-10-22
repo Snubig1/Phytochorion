@@ -9,8 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.team_phytochorion.phytochorion.Phytochorion;
 
 public class PhytochorionEntities {
-    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
-            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Phytochorion.MOD_ID);
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Phytochorion.MOD_ID);
 
     public static final RegistryObject<EntityType<PhytochorionBoatEntity>> PHYTOCHORION_BOAT = ENTITY_TYPES.register("phytochorion_boat", () -> EntityType.Builder.<PhytochorionBoatEntity>of(PhytochorionBoatEntity::new, MobCategory.MISC).sized(1.375f, 0.5625f).clientTrackingRange(10).build("phytochorion_boat"));
     public static final RegistryObject<EntityType<PhytochorionChestBoatEntity>> PHYTOCHORION_CHEST_BOAT = ENTITY_TYPES.register("phytochorion_chest_boat", () -> EntityType.Builder.<PhytochorionChestBoatEntity>of(PhytochorionChestBoatEntity::new, MobCategory.MISC).sized(1.375f, 0.5625f).clientTrackingRange(10).build("phytochorion_chest_boat"));
