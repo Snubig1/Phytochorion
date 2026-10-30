@@ -103,6 +103,8 @@ public class Phytochorion
 
             EntityRenderers.register(PhytochorionEntities.PHYTOCHORION_BOAT.get(), pContext -> new PhytochorionBoatRenderer(pContext, false));
             EntityRenderers.register(PhytochorionEntities.PHYTOCHORION_CHEST_BOAT.get(), pContext -> new PhytochorionBoatRenderer(pContext, true));
+
+            //ButterflyDescription.fromJson(GsonHelper.parse(pResource.openAsReader())).write();
         }
 
         @SubscribeEvent

@@ -1,17 +1,25 @@
 
 
 Araucaria Forest:
-    * witches (undead) hides in the fog, and throws fog bottles (may be cured)
+    * undead witches: hides in the fog, and throws fog bottles
+      uses splash potion of harming on themself when you get close and they are missing health (poison if not missing health)
+    * cured araucaria witch: cured in same way as villager
+      hides in for and occasionally throws purple fog bottle and eats chorous fruit
+      when hit with two attacks of more than 5 damage quickly, splash potion of turtlemaster and chorous fruit away (only once per witch)
+      if on low health drinks invis potion and tries to heal (takes longer than usual but heals more) if hit gets interrupted and runs away (three times per witch)
     * Structures: (related to the witches)
     * abandoned pillager outposts (maybe skeleton pillager)
     * Fog: volumetric fog caused by potions (thrown and in cauldron)
+      fog spread pattern max((highest neighbor)-2, ( secondhighest neighbor)-1)
+      reduces light by one aditional level per block traveled through
+      purple variant that attracts nearby teleportation
     * potion of true sight: lets you see invisible entities, and through fog for a few seconds (brewed from araucaria needles
 
 Ginkgo Forest:
     * increased pig spawns
     * golden rabbits
     * Ginkgo tree: big and small
-      Leaf tops are a shape (you should know the shape) with additional diagonal (up towards center) lines of length 1..3 overlayed on top
+      Leaf tops have additional diagonal (up towards center) lines of length 1..3 overlayed on top
     * ruins
     * areas with lanterns in the trees
     * potential graveyard structure
@@ -73,3 +81,14 @@ Other?
     * Aldrovanda vesiculosa
     * cattails?
     * Underground forest
+
+
+ /=====================================================\
+<==================  TECHNICAL PLANS  ==================>
+ \=====================================================/
+
+Fog:
+    * something similar to light
+    net/minecraft/world/level/lighting/DataLayerStorageMap.class
+
+Butterflies:

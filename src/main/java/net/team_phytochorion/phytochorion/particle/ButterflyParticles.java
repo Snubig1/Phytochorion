@@ -1,5 +1,7 @@
 package net.team_phytochorion.phytochorion.particle;
 
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.player.LocalPlayer;
@@ -7,7 +9,6 @@ import net.minecraft.core.particles.SimpleParticleType;
 
 
 public class ButterflyParticles extends TextureSheetParticle {
-    protected LocalPlayer player;
     private final SpriteSet sprites;
 
     protected ButterflyParticles(ClientLevel pLevel, double pX, double pY, double pZ,
@@ -28,24 +29,33 @@ public class ButterflyParticles extends TextureSheetParticle {
         this.gCol = 1f;
         this.bCol = 1f;
 
-        player = pLevel.minecraft.player;
         this.setSpriteFromAge(sprites);
 
 
     }
 
     public void tick() {
-        this.xo = this.x;
-        this.yo = this.y;
-        this.zo = this.z;
+
         if (this.age++ >= this.lifetime) {
             this.remove();
         } else {
-            this.setSprite(sprites.get(this.age%10, 10));
+            this.xo = this.x;
+            this.yo = this.y;
+            this.zo = this.z;
+
+            //this.setSprite(sprites.get(this.age%10, 10));
             move(0, 0, 0);
         }
     }
 
+
+    public void render(VertexConsumer pBuffer, Camera pRenderInfo, float pPartialTicks)
+    {
+        //System.out.println(pRenderInfo.getXRot());
+        if (pRenderInfo.getXRot() > 45) this.setSprite(sprites.get(1, 10));
+        else this.setSprite(sprites.get(5, 10));
+        super.render(pBuffer, pRenderInfo, pPartialTicks);
+    }
 
     @Override
     public ParticleRenderType getRenderType() {
