@@ -7,6 +7,7 @@ import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.BasicItemListing;
 import net.minecraftforge.common.MinecraftForge;
@@ -22,6 +23,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.team_phytochorion.phytochorion.block.entity.PhytochorionBlockEntities;
+import net.team_phytochorion.phytochorion.butterfly.ButterflyMannager;
 import net.team_phytochorion.phytochorion.effect.PhytochorionMobEffects;
 import net.team_phytochorion.phytochorion.entity.PhytochorionEntities;
 import net.team_phytochorion.phytochorion.entity.client.PhytochorionBoatRenderer;
@@ -104,13 +106,18 @@ public class Phytochorion
             EntityRenderers.register(PhytochorionEntities.PHYTOCHORION_BOAT.get(), pContext -> new PhytochorionBoatRenderer(pContext, false));
             EntityRenderers.register(PhytochorionEntities.PHYTOCHORION_CHEST_BOAT.get(), pContext -> new PhytochorionBoatRenderer(pContext, true));
 
-            //ButterflyDescription.fromJson(GsonHelper.parse(pResource.openAsReader())).write();
         }
 
         @SubscribeEvent
         public static void registerParticleProvider(RegisterParticleProvidersEvent event)
         {
             event.registerSpriteSet(PhytochorionParticles.BUTERFLY_PARTICLES.get(), ButterflyParticles.Provider::new);
+        }
+
+        @SubscribeEvent
+        public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)
+        {
+            event.registerReloadListener(new ButterflyMannager());
         }
     }
 
