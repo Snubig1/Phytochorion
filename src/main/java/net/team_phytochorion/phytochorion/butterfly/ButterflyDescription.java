@@ -4,10 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Streams;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.minecraft.client.particle.ParticleDescription;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,5 +1,8 @@
 package net.team_phytochorion.phytochorion.mixin;
 
+import com.llamalad7.mixinextras.expression.Definition;
+import com.llamalad7.mixinextras.expression.Expression;
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
@@ -15,8 +18,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Gui.class)
 public class MixinSappedGui {
 
+    @Unique
+    private static final ResourceLocation PHYTOCHORION_GUI_ICONS_LOCATION = ResourceLocation.fromNamespaceAndPath("phytochorion", "textures/gui/icons.png");
+
     @Inject(method = "renderHearts", at = @At(value = "END_LOOP"))
-    protected void addSappedHearts(GuiGraphics pGuiGraphics, Player pPlayer, int pX, int pY, int pHeight, int pOffsetHeartIndex, float pMaxHealth, int pCurrentHealth, int pDisplayHealth, int pAbsorptionAmount, boolean pRenderHighlight, CallbackInfo ci, @Local(name = "l1") int l1, @Local(name = "i2") int i2, @Local(name = "j2") int j2, @Local(name = "flag") boolean flag)
+    private void addSappedHearts(GuiGraphics pGuiGraphics, Player pPlayer, int pX, int pY, int pHeight, int pOffsetHeartIndex, float pMaxHealth, int pCurrentHealth, int pDisplayHealth, int pAbsorptionAmount, boolean pRenderHighlight, CallbackInfo ci, @Local(name = "l1") int l1, @Local(name = "i2") int i2, @Local(name = "j2") int j2, @Local(name = "flag") boolean flag)
     {
         if (pPlayer.hasEffect(PhytochorionMobEffects.SAPPED.get())){
             if (!flag && pCurrentHealth <= j2) {
@@ -27,18 +33,16 @@ public class MixinSappedGui {
         }
     }
 
-    @Inject(method = "renderHearts", at = @At(value = "START_LOOP", shift = At.Shift.BY, by = -5))
-    protected void stopRegenBounce(GuiGraphics pGuiGraphics, Player pPlayer, int pX, int pY, int pHeight, int pOffsetHeartIndex, float pMaxHealth, int pCurrentHealth, int pDisplayHealth, int pAbsorptionAmount, boolean pRenderHighlight, CallbackInfo ci, @Local(index = 17) int i1)
+
+    @Definition(id = "i1", local = @Local(ordinal = 11, type = int.class))
+    @Definition(id = "pOffsetHeartIndex", local = @Local(ordinal = 3, type = int.class))
+    @Expression("i1 == pOffsetHeartIndex")
+    @ModifyExpressionValue(method = "renderHearts", at = @At("MIXINEXTRAS:EXPRESSION"))
+    private boolean stopRegenBounce(boolean original, @Local(name = "i1") int i1, @Local(name = "pPlayer") Player pPlayer, @Local(name = "pCurrentHealth") int pCurrentHealth)
     {
-        System.out.println("test");
-        System.out.println(i1);
-        //i2.set(10);
-        //if (pPlayer.hasEffect(PhytochorionMobEffects.SAPPED.get()) && i1 > (pDisplayHealth/2) && i1 == pOffsetHeartIndex) {
-        //    i2.set(i2.get() + 2);
-        //}
+        if(pPlayer.hasEffect(PhytochorionMobEffects.SAPPED.get()) && i1 >= pCurrentHealth/2){
+            return false;
+        }
+        else return original;
     }
-
-    @Unique
-    private static final ResourceLocation PHYTOCHORION_GUI_ICONS_LOCATION = ResourceLocation.fromNamespaceAndPath("phytochorion", "textures/gui/icons.png");
-
 }

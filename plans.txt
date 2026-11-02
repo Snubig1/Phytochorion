@@ -7,6 +7,7 @@ Araucaria Forest:
       hides in for and occasionally throws purple fog bottle and eats chorous fruit
       when hit with two attacks of more than 5 damage quickly, splash potion of turtlemaster and chorous fruit away (only once per witch)
       if on low health drinks invis potion and tries to heal (takes longer than usual but heals more) if hit gets interrupted and runs away (three times per witch)
+      drops potion bottle that automatically refills when sleeping or maybe at dawn or midnight
     * Structures: (related to the witches)
     * abandoned pillager outposts (maybe skeleton pillager)
     * Fog: volumetric fog caused by potions (thrown and in cauldron)
