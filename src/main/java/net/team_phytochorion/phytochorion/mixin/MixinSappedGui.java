@@ -40,7 +40,7 @@ public class MixinSappedGui {
     @ModifyExpressionValue(method = "renderHearts", at = @At("MIXINEXTRAS:EXPRESSION"))
     private boolean stopRegenBounce(boolean original, @Local(name = "i1") int i1, @Local(name = "pPlayer") Player pPlayer, @Local(name = "pCurrentHealth") int pCurrentHealth)
     {
-        if(pPlayer.hasEffect(PhytochorionMobEffects.SAPPED.get()) && i1 >= pCurrentHealth/2){
+        if(pPlayer.hasEffect(PhytochorionMobEffects.SAPPED.get()) && i1 >= (pCurrentHealth+1)/2){
             return false;
         }
         else return original;
