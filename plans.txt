@@ -8,6 +8,8 @@ Araucaria Forest:
       when hit with two attacks of more than 5 damage quickly, splash potion of turtlemaster and chorous fruit away (only once per witch)
       if on low health drinks invis potion and tries to heal (takes longer than usual but heals more) if hit gets interrupted and runs away (three times per witch)
       drops potion bottle that automatically refills when sleeping or maybe at dawn or midnight
+      needs to be rifilled with water?
+      ingridients have 10 durability that drains when the potion gets brewed?
     * Structures: (related to the witches)
     * abandoned pillager outposts (maybe skeleton pillager)
     * Fog: volumetric fog caused by potions (thrown and in cauldron)
@@ -30,7 +32,9 @@ Ginkgo Forest:
 Ghost Pipe:
     * generate in (pale garden) and structures in ginkgo (maybe potted in araucaria witch structure)
     * Anti Growing Area
-    * sapped effects regen animation and queue when you should have healed
+    * sapped gives a que when you should have healed
+      maybe blinking red (same way that the border of the hearts blinks white when healing)
+    * do something fancy for the sapped half heart bounce
 
 Butterfly Weed:
     * Custom Data Driven Butterfly Particles
