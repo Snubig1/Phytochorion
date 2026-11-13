@@ -12,11 +12,11 @@ import net.minecraft.util.profiling.ProfilerFiller;
 import java.util.List;
 import java.util.Map;
 
-public class ButterflyMannager extends SimpleJsonResourceReloadListener {
-    private List<ButterflyDescription> descriptions =  Lists.newArrayList();
+public class ButterflyParticleMannager extends SimpleJsonResourceReloadListener {
+    private List<ButterflyParticleDescription> descriptions =  Lists.newArrayList();
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
 
-    public ButterflyMannager() {
+    public ButterflyParticleMannager() {
         super(GSON, "butterflies");
     }
 
@@ -26,7 +26,7 @@ public class ButterflyMannager extends SimpleJsonResourceReloadListener {
         for(Map.Entry<ResourceLocation, JsonElement> entry : pObject.entrySet())
         {
             System.out.println("????????????????????????????????");
-            ButterflyDescription.fromJson(entry.getValue().getAsJsonObject()).write();
+            ButterflyParticleDescription.fromJson(entry.getValue().getAsJsonObject()).write();
         }
     }
 }

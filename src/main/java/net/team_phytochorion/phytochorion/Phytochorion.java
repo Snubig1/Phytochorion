@@ -23,7 +23,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.team_phytochorion.phytochorion.block.entity.PhytochorionBlockEntities;
-import net.team_phytochorion.phytochorion.butterfly.ButterflyMannager;
+import net.team_phytochorion.phytochorion.butterfly.ButterflyParticleMannager;
 import net.team_phytochorion.phytochorion.effect.PhytochorionMobEffects;
 import net.team_phytochorion.phytochorion.entity.PhytochorionEntities;
 import net.team_phytochorion.phytochorion.entity.client.PhytochorionBoatRenderer;
@@ -117,7 +117,7 @@ public class Phytochorion
         @SubscribeEvent
         public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)
         {
-            event.registerReloadListener(new ButterflyMannager());
+            event.registerReloadListener(new ButterflyParticleMannager());
         }
     }
 

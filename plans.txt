@@ -40,15 +40,14 @@ Butterfly Weed:
     * Custom Data Driven Butterfly Particles
     * butterfly types being determined by surrounding blocks (any butterfly if no specific blocks)
 
-Menial Tasks:
+Miscellaneous Tasks:
     * clean up extra leaves on diagonal ginkgo brach code
-    * make araucaria needles not a flower
     * araucaria ground covering working in single biome worlds
     * new ginkgo leaf texture
     * funny ingots
     * fix araucaria breaking bedrock
     * splashtexts
-    * field guide integration
+    * field guide integration (or maybe just a guidebook by itself)
     * add items to vanilla creative tabs
     * clean up event file placements
 
@@ -86,6 +85,12 @@ Other?
     * Aldrovanda vesiculosa
     * cattails?
     * Underground forest
+    * Ink cap (potion effet that amplifies negative effects inflicted on you)
+    * some building blockset
+    * black, white, and () butterlies(/moths)
+      https://en.wikipedia.org/wiki/Araotes_lapithis
+      https://en.wikipedia.org/wiki/Thysania_agrippina
+      https://en.wikipedia.org/wiki/Ascalapha_odorata
 
 
  /=====================================================\
@@ -97,3 +102,8 @@ Fog:
     net/minecraft/world/level/lighting/DataLayerStorageMap.class
 
 Butterflies:
+
+Ghost Pipe:
+    net.minecraftforge.event.level.BlockEvent.CropGrowEvent
+    net.minecraftforge.event.level.SaplingGrowTreeEvent
+    net.minecraft.server.level.ServerLevel.tickChunk (Random Tick)

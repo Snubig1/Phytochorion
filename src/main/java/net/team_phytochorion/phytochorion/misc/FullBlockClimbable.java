@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Optional;
 
 public class FullBlockClimbable {
-    public static Optional<BlockPos> isOnFullBlockClimbable(Level level, @NotNull LivingEntity entity) {
+    public static Optional<BlockPos> isOnFullBlockClimbable(Level level, LivingEntity entity) {
         if (!(entity instanceof Player && entity.isSpectator())) {
             AABB entityBoundingBox = entity.getBoundingBox();
             int minX = Mth.floor(entityBoundingBox.minX- 0.125);

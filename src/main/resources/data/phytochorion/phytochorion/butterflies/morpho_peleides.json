@@ -1,0 +1,12 @@
+{
+  "butterfly_particle": "morpho_peleides",
+  "blocks": [
+    {
+      "id": "minecraft:cornflower"
+    },
+    {
+      "id": "phytochorion:araucaria_slab",
+      "type": "bottom"
+    }
+  ]
+}

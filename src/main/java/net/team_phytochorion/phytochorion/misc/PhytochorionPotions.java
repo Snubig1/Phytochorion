@@ -13,7 +13,7 @@ public class PhytochorionPotions {
     public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(ForgeRegistries.POTIONS, Phytochorion.MOD_ID);
 
     public static final RegistryObject<Potion> SAPPING = POTIONS.register("sapping", () -> new Potion(new MobEffectInstance(PhytochorionMobEffects.SAPPED.get(), 432)));
-    public static final  RegistryObject<Potion> LONG_SAPPING = POTIONS.register("long_sapping", () -> new Potion(new MobEffectInstance(PhytochorionMobEffects.SAPPED.get(), 900)));
+    public static final RegistryObject<Potion> LONG_SAPPING = POTIONS.register("long_sapping", () -> new Potion(new MobEffectInstance(PhytochorionMobEffects.SAPPED.get(), 900)));
 
 
     public static void register(IEventBus eventBus) {
