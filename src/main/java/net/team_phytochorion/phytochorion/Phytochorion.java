@@ -55,17 +55,19 @@ public class Phytochorion
     {
         IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(this::commonSetup);
-        PhytochorionCreativeModeTabs.register(modEventBus);
-        PhytochorionBlocks.register(modEventBus);
-        PhytochorionEntities.register(modEventBus);
-        PhytochorionMobEffects.register(modEventBus);
         PhytochorionBlockEntities.register(modEventBus);
+        PhytochorionBlocks.register(modEventBus);
+        //PhytochorionButterflies.register(modEventBus);
+        PhytochorionCreativeModeTabs.register(modEventBus);
+        PhytochorionEntities.register(modEventBus);
         PhytochorionFeatures.register(modEventBus);
-        PhytochorionTrunkPlacers.register(modEventBus);
         PhytochorionFoliagePlacers.register(modEventBus);
+        PhytochorionMobEffects.register(modEventBus);
+        PhytochorionTrunkPlacers.register(modEventBus);
         PhytochorionItems.register(modEventBus);
         PhytochorionParticles.register(modEventBus);
         PhytochorionPotions.register(modEventBus);
+        PhytochorionRegistries.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us

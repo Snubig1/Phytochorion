@@ -43,6 +43,7 @@ Butterfly Weed:
 Miscellaneous Tasks:
     * clean up extra leaves on diagonal ginkgo brach code
     * araucaria ground covering working in single biome worlds
+    * change araucaria brambles density
     * new ginkgo leaf texture
     * funny ingots
     * fix araucaria breaking bedrock

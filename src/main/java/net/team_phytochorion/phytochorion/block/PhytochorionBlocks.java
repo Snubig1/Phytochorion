@@ -87,7 +87,7 @@ public class PhytochorionBlocks {
     public static final RegistryObject<Block> RED_GHOST_PIPE = registerBlock("red_ghost_pipe", GhostPipe::new);
     public static final RegistryObject<Block> POTTED_RED_GHOST_PIPE = BLOCKS.register("potted_red_ghost_pipe", () -> flowerPot(RED_GHOST_PIPE.get()));
 
-    public static final RegistryObject<Block> BUTTERFLY_WEED = registerBlock("butterfly_weed", ButterflyWeed::new);
+    public static final RegistryObject<Block> BUTTERFLY_WEED = registerBlock("butterfly_weed", ButterflyWeedBlock::new);
     public static final RegistryObject<Block> POTTED_BUTTERFLY_WEED = BLOCKS.register("potted_butterfly_weed", () -> flowerPot(BUTTERFLY_WEED.get()));
     public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling", () -> new SaplingBlock(new PineTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<Block> POTTED_PINE_SAPLING = BLOCKS.register("potted_pine_sapling", () -> flowerPot(PINE_SAPLING.get()));
