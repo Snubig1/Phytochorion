@@ -13,7 +13,7 @@ Araucaria Forest:
     * Structures: (related to the witches)
     * abandoned pillager outposts (maybe skeleton pillager)
     * Fog: volumetric fog caused by potions (thrown and in cauldron)
-      fog spread pattern max((highest neighbor)-2, ( secondhighest neighbor)-1)
+      fog spread pattern max((highest neighbor)-2, (secondhighest neighbor)-1)
       reduces light by one aditional level per block traveled through
       purple variant that attracts nearby teleportation
     * potion of true sight: lets you see invisible entities, and through fog for a few seconds (brewed from araucaria needles
@@ -41,6 +41,7 @@ Butterfly Weed:
     * butterfly types being determined by surrounding blocks (any butterfly if no specific blocks)
 
 Miscellaneous Tasks:
+    * fix branches model
     * clean up extra leaves on diagonal ginkgo brach code
     * araucaria ground covering working in single biome worlds
     * change araucaria brambles density
@@ -88,7 +89,7 @@ Other?
     * Underground forest
     * Ink cap (potion effet that amplifies negative effects inflicted on you)
     * some building blockset
-    * black, white, and () butterlies(/moths)
+    * black, white, and () witch butterlies(/moths)
       https://en.wikipedia.org/wiki/Araotes_lapithis
       https://en.wikipedia.org/wiki/Thysania_agrippina
       https://en.wikipedia.org/wiki/Ascalapha_odorata

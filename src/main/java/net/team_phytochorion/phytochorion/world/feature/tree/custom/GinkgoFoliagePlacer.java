@@ -2,6 +2,7 @@ package net.team_phytochorion.phytochorion.world.feature.tree.custom;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
+import net.team_phytochorion.phytochorion.block.PhytochorionBlocks;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionFoliagePlacers;
 
 public class GinkgoFoliagePlacer  extends FoliagePlacer {
@@ -26,6 +28,7 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
     @Override
     protected FoliagePlacerType<?> type() {return PhytochorionFoliagePlacers.GINKGO_FOLIAGE_PLACER.get();}
 
+    static final int[] diagonalLenMap = {1, 2, 3, 3, 2, 1};
     static final Direction[] directionMap = {
             Direction.NORTH,
             Direction.EAST,
@@ -56,6 +59,22 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
             placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(0,-1, -2), Direction.EAST, 2, 0.25f, 0.4f);
             placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().offset(0,-1, 3), Direction.EAST, 2, 0.25f, 0.4f);
 
+            int leafDiagonalAmount = pRandom.nextInt(2, 5);
+            int leeafDiagonalPos;
+            int leeeafDiagonalLen;
+            Direction leeeeafDiagonalDirection;
+            for (int i = 0; i <= leafDiagonalAmount; i++){
+                leeafDiagonalPos = pRandom.nextInt(0, 6);
+                leeeafDiagonalLen = pRandom.nextInt(0, diagonalLenMap[leeafDiagonalPos]+1);
+                leeeeafDiagonalDirection = Util.getRandom(directionMap, pRandom);
+                System.out.println(leeafDiagonalPos);
+                System.out.println(leeeafDiagonalLen);
+                for (int i2 = pRandom.nextInt(diagonalLenMap[leeafDiagonalPos]-leeeafDiagonalLen+1); i2 <= leeeafDiagonalLen; i2++){
+                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().above(i2+5).relative(leeeeafDiagonalDirection, i2+2));
+                    System.out.println(i2);
+                }
+                System.out.println("________________________");
+            }
             return;
         }
 
@@ -77,6 +96,7 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
         int topLeafOffsetR = pRandom.nextInt(0, branchLen-topLeafLenR+1);
         int topLeafOffsetL = pRandom.nextInt(0, branchLen-topLeafLenL+1);
         for (int currentBranchProgress = 0; currentBranchProgress < branchLen; currentBranchProgress++)
+
         {
             currentPos = pAttachment.pos().above((int)(veritacalOffsetAngle * (currentBranchProgress+1))).relative(direction, currentBranchProgress).relative(direction.getClockWise(), handedness * (offsetCumulative/2));
             if (placeLog(pLevel, pBlockSetter, currentPos, pConfig.trunkProvider.getState(pRandom, pAttachment.pos()), direction)) {
@@ -95,7 +115,10 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
                 }
 
 
-                if (currentBranchProgress == 0) tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, -1));
+                if (currentBranchProgress == 0) {
+                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction, -1));
+                    placeLog(pLevel, pBlockSetter, currentPos.below(), PhytochorionBlocks.GINKGO_LOG.get().defaultBlockState(), Direction.DOWN);
+                }
                 if (currentBranchProgress == branchLen-1) {
                     tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, currentPos.above(1).relative(direction));
                     placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, currentPos, direction, pRandom.nextInt(3,5), 0.4f, 0.25f);
@@ -120,7 +143,7 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
         return false;
     }
 
-    private float MapRandomFloat(float value, float bound_1, float bound_2){
+    private static float MapRandomFloat(float value, float bound_1, float bound_2){
         return value * (bound_2 - bound_1) + bound_1;
     }
 

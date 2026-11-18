@@ -1,18 +1,18 @@
 {
   "top_textures": [
-    "morpho_peleides_top_1",
-    "morpho_peleides_top_2",
-    "morpho_peleides_top_3"
+    "phytochorion:morpho_peleides_top_1",
+    "phytochorion:morpho_peleides_top_2",
+    "phytochorion:morpho_peleides_top_3"
   ],
   "side_textures": [
-    "morpho_peleides_side_1",
-    "morpho_peleides_side_2",
-    "morpho_peleides_side_3"
+    "phytochorion:morpho_peleides_side_1",
+    "phytochorion:morpho_peleides_side_2",
+    "phytochorion:morpho_peleides_side_3"
   ],
   "bottom_textures": [
-    "morpho_peleides_top_1",
-    "morpho_peleides_top_2",
-    "morpho_peleides_top_3"
+    "phytochorion:morpho_peleides_top_1",
+    "phytochorion:morpho_peleides_top_2",
+    "phytochorion:morpho_peleides_top_3"
   ],
   "flap_speed": 5,
   "words": [
