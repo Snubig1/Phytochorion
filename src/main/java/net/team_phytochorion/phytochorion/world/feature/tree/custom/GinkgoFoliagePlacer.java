@@ -14,8 +14,9 @@ import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
-import net.team_phytochorion.phytochorion.block.PhytochorionBlocks;
 import net.team_phytochorion.phytochorion.world.feature.tree.PhytochorionFoliagePlacers;
+
+import static java.lang.Math.max;
 
 public class GinkgoFoliagePlacer  extends FoliagePlacer {
     public static final Codec<GinkgoFoliagePlacer> CODEC = RecordCodecBuilder.create((placer) ->
@@ -69,14 +70,16 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
                 leeeeafDiagonalDirection = Util.getRandom(directionMap, pRandom);
                 System.out.println(leeafDiagonalPos);
                 System.out.println(leeeafDiagonalLen);
-                for (int i2 = pRandom.nextInt(diagonalLenMap[leeafDiagonalPos]-leeeafDiagonalLen+1); i2 <= leeeafDiagonalLen; i2++){
-                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().above(i2+5).relative(leeeeafDiagonalDirection, i2+2));
+                System.out.println(leeeeafDiagonalDirection);
+                for (int i2 = pRandom.nextInt(max(diagonalLenMap[leeafDiagonalPos]-leeeafDiagonalLen, 1)); i2 <= leeeafDiagonalLen; i2++){
+                    tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().above(i2+5).relative(leeeeafDiagonalDirection, 3-i2).relative(leeeeafDiagonalDirection.getClockWise(), leeafDiagonalPos-3));
                     System.out.println(i2);
                 }
                 System.out.println("________________________");
             }
             return;
         }
+        /*
 
         boolean topBranch = pAttachment.radiusOffset() >= 10;
 
@@ -126,11 +129,11 @@ public class GinkgoFoliagePlacer  extends FoliagePlacer {
                     placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, currentPos.relative(direction.getClockWise(), -1), direction, pRandom.nextInt(2,4), 0.4f, 0.25f);
                 }
 
-
             }else break;
             offsetAngle = Math.max(-1 ,Math.min(2 ,offsetAngle + pRandom.nextInt(-1, 2)));
             offsetCumulative += offsetAngle;
         }
+         */
     }
 
     @Override
